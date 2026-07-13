@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>নোটিশ বিস্তারিত | ASSRA Official</title>
     
+    <!-- Primary Meta Tags (SEO) -->
+    <title>নোটিশ বিস্তারিত | ASSRA Official</title>
+    <meta name="title" content="নোটিশ বিস্তারিত | ASSRA Official">
+    <meta name="description" content="আরামবাগ সাবডিভিশনাল স্পোর্টস এন্ড রেফারি অ্যাসোসিয়েশনের (ASSRA) অফিসিয়াল নোটিশ, আপডেট এবং বিস্তারিত তথ্য।">
+    
+    <!-- Theme & Fonts -->
     <meta name="theme-color" content="#0F172A">
-    <meta name="robots" content="index, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,17 +21,13 @@
         :root {
             --header-bg-start: #0F172A;
             --header-bg-end: #1E3A8A;
-            --btn-normal-start: #2563EB;
-            --btn-normal-end: #1D4ED8;
-            --btn-hover-start: #7C3AED;
-            --btn-hover-end: #2563EB;
             --footer-start: #111827;
             --footer-end: #1F2937;
             --text-dark: #1F2937;
             --bg-light: #F9FAFB;
         }
 
-        /* Base Reset */
+        /* Base Reset & Ultra HD Optimization */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Noto Sans Bengali', 'Poppins', sans-serif;
@@ -36,9 +36,12 @@
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-tap-highlight-color: transparent;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Beta Bar (Requirement 5 & 6) */
+        /* Beta Bar */
         .beta-bar {
             position: sticky;
             top: 0;
@@ -49,20 +52,21 @@
             padding: 10px 15px;
             font-size: 0.85rem;
             font-weight: 600;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            letter-spacing: 0.3px;
         }
 
-        /* Header Styling (Requirement 1 & 2) */
+        /* Header Premium Enhancement (Matched with index.html) */
         header {
             background: linear-gradient(135deg, var(--header-bg-start), var(--header-bg-end));
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
             position: relative;
         }
         
         .premium-title-bn {
-            font-size: clamp(1.5rem, 4vw, 2.2rem);
-            margin-bottom: 10px;
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
+            margin-bottom: 12px;
             font-weight: 700;
             background: linear-gradient(to right, #FFFFFF, #93C5FD, #38BDF8);
             -webkit-background-clip: text;
@@ -71,7 +75,7 @@
         }
 
         .premium-title-en {
-            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            font-size: clamp(0.95rem, 2vw, 1.25rem);
             font-family: 'Poppins', sans-serif;
             color: #E5E7EB;
             font-weight: 500;
@@ -88,166 +92,199 @@
             left: 0;
         }
 
-        /* Main Container & Layout Responsive Testing (Requirement 13) */
+        /* Details Container & Card */
         .container {
-            max-width: 800px;
+            max-width: 900px; /* Perfect reading width */
             margin: 40px auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
         
         .card {
             background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            border-top: 4px solid #7C3AED;
+            border-radius: 16px;
+            padding: 35px 30px;
+            box-shadow: 0 10px 30px -5px rgba(0,0,0,0.06);
+            border-top: 5px solid #2563EB;
+            min-height: 400px;
         }
 
-        /* Back Button Touch Optimization (Requirement 12) */
+        @media (min-width: 768px) {
+            .card { padding: 50px; }
+        }
+
+        /* Back Button - Premium Styling */
         .btn-back {
-            display: inline-block;
-            background: #E5E7EB;
-            color: #374151;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #475569, #334155);
+            color: white;
             padding: 12px 24px;
-            border-radius: 8px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
-            margin-bottom: 25px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(71, 85, 105, 0.2);
+            margin-bottom: 35px;
             font-size: 0.95rem;
-            cursor: pointer;
             border: none;
-            text-align: center;
-        }
-        .btn-back:hover { 
-            background: #D1D5DB; 
-            transform: translateX(-3px);
+            cursor: pointer;
         }
         
+        .btn-back:hover { 
+            background: linear-gradient(135deg, #334155, #1E293B);
+            box-shadow: 0 6px 15px rgba(71, 85, 105, 0.35); 
+            transform: translateX(-4px);
+        }
+
         /* Notice Details Typography & Readability */
+        .notice-header {
+            border-bottom: 2px dashed #E2E8F0;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
         .notice-title { 
-            font-size: clamp(1.4rem, 4vw, 1.9rem); 
-            color: #111827; 
-            margin-bottom: 12px; 
+            font-size: clamp(1.5rem, 4vw, 2.2rem); 
+            color: #0F172A; 
+            margin-bottom: 15px; 
             font-weight: 700; 
             line-height: 1.4;
         }
         
         .notice-date { 
-            font-size: 0.9rem; 
-            color: #6B7280; 
-            margin-bottom: 25px; 
-            font-family: 'Poppins', sans-serif;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            background: #F1F5F9;
+            color: #475569;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            border: 1px solid #E2E8F0;
         }
         
         .notice-body { 
-            font-size: 1.05rem; 
-            color: #374151; 
+            font-size: 1.1rem; 
+            color: #334155; 
             white-space: pre-wrap; 
             line-height: 1.8;
-            border-top: 1px dashed #E5E7EB;
-            padding-top: 20px;
+            text-align: justify;
         }
         
-        .loading { 
+        /* Status Boxes */
+        .status-box {
             text-align: center; 
-            color: var(--btn-normal-start); 
+            padding: 40px 20px; 
+            border-radius: 12px; 
             font-weight: 600; 
-            padding: 40px 0; 
             font-size: 1.1rem;
+            margin-top: 20px;
         }
+        .loading-box { background: #E0F2FE; color: #0284C7; border: 1px solid #BAE6FD; }
+        .error-box { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
 
-        /* Footer Premium Typography (Requirement 3 & 4) */
+        /* Footer Typography Enhancement (Matched with index.html) */
         footer {
             background: linear-gradient(180deg, var(--footer-start), var(--footer-end));
-            text-align: center; padding: 40px 20px; margin-top: 60px;
+            text-align: center; padding: 50px 20px; margin-top: 60px;
         }
         
         .footer-official {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             background: linear-gradient(to right, #FFFFFF, #93C5FD);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 2px 6px rgba(0,0,0,0.25);
-            display: inline-block;
         }
         
         .footer-assoc {
             color: #E5E7EB;
             font-weight: 600;
             margin-bottom: 20px;
+            font-size: 1.05rem;
             text-shadow: 0 2px 6px rgba(0,0,0,0.25);
         }
 
         .footer-beta {
             color: #10B981;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
         }
 
-        .footer-dev-text { color: #FFFFFF; font-size: 0.95rem; margin-bottom: 15px;}
+        .footer-dev-text { color: #FFFFFF; font-size: 1rem; margin-bottom: 20px;}
         
         .footer-dev-name {
             background: linear-gradient(to right, #38BDF8, #60A5FA);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-block;
+            font-size: 1.25rem;
         }
         
-        .footer-copyright { color: #D1D5DB; font-size: 0.85rem; }
+        .footer-copyright { color: #D1D5DB; font-size: 0.9rem; margin-top: 10px; }
     </style>
 </head>
 <body>
 
+    <!-- Beta Bar -->
     <div class="beta-bar">
         🚧 Official Beta v3.0 • ওয়েবসাইটের কিছু ফিচার বর্তমানে উন্নয়নাধীন রয়েছে। আপনার মূল্যবান মতামত, পরামর্শ ও সহযোগিতা আন্তরিকভাবে স্বাগত।
     </div>
 
+    <!-- Premium Header -->
     <header>
         <h1 class="premium-title-bn">আরামবাগ সাবডিভিশনাল স্পোর্টস এন্ড রেফারি অ্যাসোসিয়েশন</h1>
         <h2 class="premium-title-en">Arambagh Subdivisional Sports & Referee's Association (ASSRA)</h2>
         <div class="header-rainbow-border"></div>
     </header>
 
-    <div class="container">
+    <!-- Content Area -->
+    <main class="container">
         <div class="card">
-            <a href="index.html" class="btn-back">⬅️ হোম পেজে ফিরে যান</a>
+            <a href="index.html" class="btn-back">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                হোম পেজে ফিরে যান
+            </a>
             
             <div id="notice-content">
-                <div class="loading">⏳ নোটিশের বিস্তারিত তথ্য লোড হচ্ছে, অনুগ্রহ করে অপেক্ষা করুন...</div>
+                <div class="status-box loading-box">
+                    ⏳ নোটিশের বিস্তারিত তথ্য লোড হচ্ছে, অনুগ্রহ করে অপেক্ষা করুন...
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
+    <!-- Premium Footer -->
     <footer>
-        <p class="footer-official">Official Website</p>
-        <p class="footer-assoc">Arambagh Subdivisional Sports & Referee's Association (ASSRA)</p>
-        <span class="footer-beta">🚧 Official Beta v3.0</span>
+        <div class="footer-official">Official Website</div>
+        <div class="footer-assoc">Arambagh Subdivisional Sports & Referee's Association (ASSRA)</div>
+        <div class="footer-beta">🚧 Official Beta v3.0</div>
         <p class="footer-dev-text">Designed & Developed by <br><span class="footer-dev-name">Mr. Swastik Halder</span></p>
         <p class="footer-copyright">© 2026–Present | All Rights Reserved.</p>
     </footer>
 
+    <!-- JavaScript Data Fetch Logic -->
     <script>
-        // URL প্যারামিটার থেকে নোটিশের আইডি নেওয়া
         const urlParams = new URLSearchParams(window.location.search);
         const noticeId = urlParams.get('id');
         
-        // অফিসিয়াল ফিক্সড এপিআই ইউআরএল
         const API_URL = "https://script.google.com/macros/s/AKfycbzhG400jaJkrrfRcObaLD0qYjCIQEfuEOa362OD9GGldOhF5ts9cF0c4txvgV2XcFDXtA/exec";
         const contentDiv = document.getElementById('notice-content');
 
         async function fetchNoticeDetails() {
             if (noticeId === null || noticeId === "") {
-                contentDiv.innerHTML = '<p style="color:red; text-align:center; font-weight:600; padding:20px;">⚠️ কোনো নির্দিষ্ট নোটিশ নির্বাচন করা হয়নি।</p>';
+                contentDiv.innerHTML = '<div class="status-box error-box">⚠️ কোনো নির্দিষ্ট নোটিশ নির্বাচন করা হয়নি। অনুগ্রহ করে হোম পেজ থেকে একটি নোটিশ নির্বাচন করুন।</div>';
                 return;
             }
 
@@ -255,24 +292,27 @@
                 const response = await fetch(API_URL);
                 const data = await response.json();
                 
-                // অ্যারের ইনডেক্স থেকে সঠিক নোটিশের তথ্য নির্ধারণ
                 const notice = data[noticeId];
                 
                 if (notice) {
                     contentDiv.innerHTML = `
-                        <h2 class="notice-title">${notice.Title || 'শিরোনাম উপলব্ধ নেই'}</h2>
-                        <div class="notice-date">📅 প্রকাশিত তারিখ: ${notice.Date || 'তারিখ পাওয়া যায়নি'}</div>
+                        <div class="notice-header">
+                            <h2 class="notice-title">${notice.Title || 'শিরোনাম উপলব্ধ নেই'}</h2>
+                            <div class="notice-date">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                প্রকাশিত তারিখ: ${notice.Date || 'তারিখ পাওয়া যায়নি'}
+                            </div>
+                        </div>
                         <div class="notice-body">${notice.Description || 'এই নোটিশের কোনো অতিরিক্ত বিবরণ প্রদান করা হয়নি।'}</div>
                     `;
                 } else {
-                    contentDiv.innerHTML = '<p style="color:red; text-align:center; font-weight:600; padding:20px;">⚠️ দুঃখিত, নোটিশটি খুঁজে পাওয়া যায়নি বা এটি সিস্টেম থেকে সরিয়ে ফেলা হয়েছে।</p>';
+                    contentDiv.innerHTML = '<div class="status-box error-box">⚠️ দুঃখিত, নোটিশটি খুঁজে পাওয়া যায়নি বা এটি সিস্টেম থেকে সরিয়ে ফেলা হয়েছে।</div>';
                 }
             } catch (error) {
-                contentDiv.innerHTML = '<p style="color:red; text-align:center; font-weight:600; padding:20px;">⚠️ সার্ভার থেকে ডাটা লোড করতে সমস্যা হচ্ছে। আপনার ইন্টারনেট সংযোগটি পরীক্ষা করুন।</p>';
+                contentDiv.innerHTML = '<div class="status-box error-box">⚠️ সার্ভার থেকে ডাটা লোড করতে সমস্যা হচ্ছে। আপনার ইন্টারনেট সংযোগটি পরীক্ষা করুন।</div>';
             }
         }
 
-        // এক্সিকিউশন স্টার্ট
         fetchNoticeDetails();
     </script>
 </body>
