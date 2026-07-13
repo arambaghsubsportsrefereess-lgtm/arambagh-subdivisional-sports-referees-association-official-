@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>নোটিশ বিস্তারিত | ASSRA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --header-bg-start: #0F172A;
+            --header-bg-end: #1E3A8A;
+            --btn-normal: #2563EB;
+            --text-dark: #1F2937;
+            --bg-light: #F9FAFB;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans Bengali', 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, var(--header-bg-start), var(--header-bg-end));
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+        header h1 { font-size: 1.5rem; margin-bottom: 5px; }
+        .header-rainbow-border {
+            height: 4px;
+            background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853);
+            width: 100%;
+            position: absolute;
+            bottom: 0; left: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-top: 4px solid #7C3AED;
+        }
+        .btn-back {
+            display: inline-block;
+            background: #E5E7EB;
+            color: #374151;
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+        .btn-back:hover { background: #D1D5DB; }
+        
+        .notice-title { font-size: 1.6rem; color: #111827; margin-bottom: 10px; font-weight: 700; line-height: 1.4;}
+        .notice-date { font-size: 0.9rem; color: #6B7280; margin-bottom: 25px; font-family: 'Poppins', sans-serif; }
+        .notice-body { font-size: 1.05rem; color: #374151; white-space: pre-wrap; line-height: 1.8;}
+        
+        .loading { text-align: center; color: var(--btn-normal); font-weight: 600; padding: 40px 0; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>আরামবাগ সাবডিভিশনাল স্পোর্টস এন্ড রেফারি অ্যাসোসিয়েশন</h1>
+        <div class="header-rainbow-border"></div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <a href="index.html" class="btn-back">⬅️ ফিরে যান</a>
+            
+            <div id="notice-content">
+                <div class="loading">⏳ নোটিশের তথ্য লোড হচ্ছে, অনুগ্রহ করে অপেক্ষা করুন...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // URL থেকে ID সংগ্রহ করা
+        const urlParams = new URLSearchParams(window.location.search);
+        const noticeId = urlParams.get('id');
+        const API_URL = "https://script.google.com/macros/s/AKfycbzhG400jaJkrrfRcObaLD0qYjCI পশ্চিমবঙ্গ400jaJkrrfRcObaLD0qYjCIQEfuEOa362OD9GGldOhF5ts9cF0c4txvgV2XcFDXtA/exec";
+        
+        const contentDiv = document.getElementById('notice-content');
+
+        async function fetchNoticeDetails() {
+            if (noticeId === null) {
+                contentDiv.innerHTML = '<p style="color:red; text-align:center;">⚠️ কোনো নোটিশ নির্বাচন করা হয়নি।</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch(API_URL);
+                const data = await response.json();
+                const notice = data[noticeId];
+                
+                if (notice) {
+                    contentDiv.innerHTML = `
+                        <h2 class="notice-title">${notice.Title || 'শিরোনাম উপলব্ধ নেই'}</h2>
+                        <div class="notice-date">📅 প্রকাশিত: ${notice.Date || 'তারিখ নেই'}</div>
+                        <div class="notice-body">${notice.Description || 'এই নোটিশের কোনো বিস্তারিত বিবরণ দেওয়া হয়নি।'}</div>
+                    `;
+                } else {
+                    contentDiv.innerHTML = '<p style="color:red; text-align:center;">⚠️ দুঃখিত, নোটিশটি খুঁজে পাওয়া যায়নি।</p>';
+                }
+            } catch (error) {
+                contentDiv.innerHTML = '<p style="color:red; text-align:center;">⚠️ সার্ভার থেকে তথ্য লোড করতে সমস্যা হচ্ছে। আপনার ইন্টারনেট কানেকশন চেক করুন।</p>';
+            }
+        }
+
+        fetchNoticeDetails();
+    </script>
+</body>
+</html>
