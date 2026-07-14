@@ -13,89 +13,84 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">  
 
     <style>  
-        /* Color Mapping Variables (v4.0) */  
         :root {  
             --c-teal: #00ACC1;  
             --c-blue: #4285F4;  
-            --c-red: #EA4335;  
-            --c-green: #34A853;  
             --c-purple: #8E24AA;  
-            --c-gold: #FBBC05;  
-            --c-orange: #FB8C00;  
-            --bg-light: #F3F6F9;  
+            --bg-light: #F0F4F8;  
             --dark-footer: #111827;  
         }  
         
         * { margin: 0; padding: 0; box-sizing: border-box; }  
         body { font-family: 'Noto Sans Bengali', 'Poppins', sans-serif; background-color: var(--bg-light); color: #333; overflow-x: hidden; }  
 
-        /* Top Language Toggle Bar (Teal) */  
+        /* Top Language Toggle Bar */  
         .top-bar {  
             background-color: var(--c-teal);  
-            color: white;  
             padding: 8px 20px;  
             display: flex;  
             justify-content: flex-end;  
             align-items: center;  
-            font-size: 0.9rem;  
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);  
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);  
+            min-height: 40px;
         }  
-        .lang-select {  
-            background: transparent; border: 1px solid rgba(255,255,255,0.5); color: white;  
-            padding: 4px 8px; border-radius: 5px; font-family: inherit; outline: none; margin-left: 8px;  
-        }  
-        .lang-select option { color: #333; }  
 
-        /* Minimal Header for Details Page */  
         header { 
             background: #fff; 
             text-align: center; 
             padding: 30px 20px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
-            margin-bottom: 30px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            margin-bottom: 40px; 
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
         }  
         header h1 { font-size: 1.5rem; color: #1F2937; margin-bottom: 5px; }  
         
         .version-badge {
             display: inline-block;
-            background-color: var(--c-teal);
+            background: linear-gradient(135deg, var(--c-teal), #008394);
             color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
+            padding: 6px 16px;
+            border-radius: 25px;
             font-weight: 600;
             font-size: 0.8rem;
-            box-shadow: 0 4px 6px rgba(0, 172, 193, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 172, 193, 0.4);
             margin-top: 10px;
         }
 
         .container { max-width: 800px; margin: 0 auto; padding: 0 20px 40px; min-height: 60vh; }  
           
-        /* Tactile 3D Back Button */
+        /* Advanced Back Button */
         .btn-tactile {  
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;  
-            padding: 10px 20px; border-radius: 12px; font-weight: 600; text-decoration: none; color: white;  
-            background: var(--c-blue); box-shadow: 0 4px 0 #2b5cb8;
-            transition: transform 0.1s, box-shadow 0.1s; border: none; cursor: pointer;  
-            margin-bottom: 25px;
+            padding: 12px 24px; border-radius: 12px; font-weight: 600; text-decoration: none; color: white;  
+            background: linear-gradient(135deg, #4285F4, #2b5cb8); 
+            box-shadow: 0 6px 0 #1a4291, 0 10px 15px rgba(66, 133, 244, 0.4);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); border: none; cursor: pointer;  
+            margin-bottom: 30px;
         }  
-        .btn-tactile:active { transform: translateY(4px); box-shadow: 0 0px 0px transparent !important; }  
+        .btn-tactile:active { transform: translateY(6px); box-shadow: 0 0px 0px transparent !important; }  
 
-        /* 3D Floating Notice Card */  
+        /* Glassmorphism Notice Card */  
         .card {  
-            background: white; border-radius: 16px; padding: 40px;  
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
-            border-top: 5px solid var(--c-purple);  
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px; padding: 45px;  
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06), inset 0 2px 0 rgba(255,255,255,1); 
+            border-top: 6px solid var(--c-purple);  
+            border-left: 1px solid rgba(255,255,255,0.5);
+            border-right: 1px solid rgba(255,255,255,0.5);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }  
-        .card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 45px rgba(142, 36, 170, 0.15); }
 
-        .notice-title { font-size: 1.6rem; color: #1F2937; margin-bottom: 12px; line-height: 1.4; font-weight: 700; }  
-        .notice-meta { display: inline-flex; align-items: center; gap: 6px; color: #6B7280; font-size: 0.95rem; margin-bottom: 25px; background: #F3F4F6; padding: 6px 15px; border-radius: 20px; font-weight: 600; }  
-        .notice-body { font-size: 1.05rem; line-height: 1.8; color: #374151; white-space: pre-wrap; }  
+        .notice-title { font-size: 1.7rem; color: #1F2937; margin-bottom: 15px; line-height: 1.4; font-weight: 700; }  
+        .notice-meta { display: inline-flex; align-items: center; gap: 8px; color: #4B5563; font-size: 0.95rem; margin-bottom: 30px; background: #F3F4F6; padding: 8px 18px; border-radius: 25px; font-weight: 600; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }  
+        .notice-body { font-size: 1.1rem; line-height: 1.8; color: #374151; white-space: pre-wrap; }  
 
-        /* Professional Footer */  
-        footer { background: var(--dark-footer); color: #9CA3AF; padding: 40px 20px 20px; text-align: center; margin-top: 50px; }  
-        .footer-brand h2 { color: white; font-size: 1.5rem; margin-bottom: 10px; }  
+        footer { background: var(--dark-footer); color: #9CA3AF; padding: 50px 20px 30px; text-align: center; margin-top: 60px; border-top: 4px solid var(--c-teal); }  
+        .footer-brand h2 { color: white; font-size: 1.6rem; margin-bottom: 10px; }  
         .footer-sub { color: var(--c-teal); font-weight: 600; font-size: 1.1rem; margin-bottom: 25px; }  
         .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }  
         .footer-links a { color: #D1D5DB; text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }  
@@ -104,22 +99,26 @@
 
         @keyframes pulse {
             0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.7; }
+            50% { transform: scale(1.15); opacity: 0.6; }
             100% { transform: scale(1); opacity: 1; }
         }
+
+        /* Google Translate Widget Fixes */
+        .goog-te-gadget { color: transparent !important; font-size: 0px !important; }
+        .goog-te-gadget .goog-te-combo { margin: 0; padding: 6px; border-radius: 6px; border: none; font-family: inherit; font-size: 14px; outline: none; cursor: pointer; font-weight: 600; }
+        .goog-logo-link { display: none !important; }
+        .goog-te-gadget > span { display: none !important; }
+        body { top: 0 !important; }
+        .skiptranslate iframe { display: none !important; }
     </style>
 
 </head>  
 <body>  
     
-    <!-- Top Bar with Language Toggle -->
+    <!-- Functional Language Translate Bar -->
     <div class="top-bar">  
-        <span class="material-icons-round" style="font-size: 18px;">translate</span>  
-        <select class="lang-select">  
-            <option value="bn">বাংলা (BN)</option>  
-            <option value="en">English (EN)</option>  
-            <option value="hi">हिन्दी (HI)</option>  
-        </select>  
+        <span class="material-icons-round" style="color: white; font-size: 22px; margin-right: 10px;">translate</span>
+        <div id="google_translate_element"></div>
     </div>  
 
     <header>  
@@ -128,23 +127,20 @@
     </header>  
 
     <main class="container">  
-        <!-- 3D Tactile Back Button -->
         <a href="index.html" class="btn-tactile">  
             <span class="material-icons-round">arrow_back</span> হোম পেজে ফিরে যান  
         </a>  
 
-        <!-- Notice Details Card -->
         <div class="card">  
             <div id="notice-content">  
-                <div style="text-align:center; padding:40px; color:var(--c-purple);">  
-                    <span class="material-icons-round" style="font-size:45px; animation: pulse 1.5s infinite;">hourglass_empty</span>  
-                    <p style="margin-top: 10px; font-weight: 600; font-size: 1.1rem;">তথ্য লোড হচ্ছে...</p>  
+                <div style="text-align:center; padding:50px; color:var(--c-purple);">  
+                    <span class="material-icons-round" style="font-size:50px; animation: pulse 1.5s infinite;">hourglass_empty</span>  
+                    <p style="margin-top: 15px; font-weight: 700; font-size: 1.2rem;">তথ্য লোড হচ্ছে...</p>  
                 </div>  
             </div>  
         </div>  
     </main>  
 
-    <!-- Upgraded Professional Footer -->
     <footer>  
         <div class="footer-brand">  
             <h2>ASSRA Official</h2>  
@@ -170,16 +166,28 @@
                 document.getElementById('notice-content').innerHTML = `  
                     <h1 class="notice-title">${item.Title}</h1>  
                     <div class="notice-meta"><span class="material-icons-round" style="font-size:18px">calendar_month</span> ${item.Date}</div>  
-                    <hr style="border:0; border-top:1px dashed #E5E7EB; margin-bottom:25px;">  
+                    <hr style="border:0; border-top:1px dashed #E5E7EB; margin-bottom:30px;">  
                     <div class="notice-body">${item.Description}</div>  
                 `;  
             } else {  
-                document.getElementById('notice-content').innerHTML = "<p style='color:red; text-align:center; font-weight: 600;'>নোটিশটি পাওয়া যায়নি।</p>";  
+                document.getElementById('notice-content').innerHTML = "<p style='color:red; text-align:center; font-weight: 700; font-size: 1.2rem;'>নোটিশটি পাওয়া যায়নি।</p>";  
             }  
         }).catch(err => {  
-            document.getElementById('notice-content').innerHTML = "<p style='color:red; text-align:center; font-weight: 600;'>সার্ভার এরর। অনুগ্রহ করে আবার চেষ্টা করুন।</p>";  
+            document.getElementById('notice-content').innerHTML = "<p style='color:red; text-align:center; font-weight: 700; font-size: 1.2rem;'>সার্ভার এরর। অনুগ্রহ করে আবার চেষ্টা করুন।</p>";  
         });  
     </script>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'bn',
+                includedLanguages: 'bn,en,hi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>  
 </html>
