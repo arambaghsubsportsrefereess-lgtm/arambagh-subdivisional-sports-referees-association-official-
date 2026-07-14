@@ -33,7 +33,6 @@
             overflow-x: hidden; 
         }  
         
-        /* Disable scroll when modal is open */
         body.modal-open { overflow: hidden; height: 100vh; }
 
         .top-bar {  
@@ -47,7 +46,7 @@
             text-align: center; padding: 30px 20px 40px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
             border-bottom-left-radius: 40px; border-bottom-right-radius: 40px;
-            margin-bottom: 40px; border-bottom: 2px solid white;
+            margin-bottom: 30px; border-bottom: 2px solid white;
         }  
         
         .hero-banner {
@@ -68,6 +67,17 @@
             display: grid; gap: 35px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
         }  
           
+        /* 📱 Mobile Usage Guide Box (New 3D Box) */
+        .mobile-alert-box {
+            background: linear-gradient(145deg, #e6f0fc, #ffffff); border-left: 8px solid var(--c-blue); 
+            padding: 25px; border-radius: 20px; display: flex; align-items: flex-start; gap: 15px; 
+            grid-column: 1 / -1; box-shadow: var(--shadow-3d); border: 2px solid white;
+            margin-bottom: 10px;
+        }
+        .mobile-alert-box h3 { color: #1a4291; font-size: 1.25rem; margin-bottom: 12px; font-weight: 800; display: flex; align-items: center; gap: 8px;}
+        .mobile-alert-box p { color: #374151; font-size: 1rem; margin-bottom: 12px; line-height: 1.6; font-weight: 600; }
+        .mobile-alert-box p strong { color: var(--c-blue); }
+
         .card {  
             background: var(--glass-bg); backdrop-filter: blur(15px);
             border-radius: 24px; padding: 30px;  
@@ -135,7 +145,7 @@
             padding: 25px; border-radius: 20px; display: flex; align-items: flex-start; gap: 15px; 
             grid-column: 1 / -1; box-shadow: var(--shadow-3d); border: 2px solid white;
         }  
-        .warning-box h3 { color: #B25E02; font-size: 1.2rem; margin-bottom: 10px; font-weight: 800; }  
+        .warning-box h3 { color: #B25E02; font-size: 1.2rem; margin-bottom: 10px; font-weight: 800; display: flex; align-items: center; gap: 8px;}  
         .warning-box p { color: #5C3A10; font-size: 1rem; margin-bottom: 10px; line-height: 1.6; font-weight: 600; }  
 
         footer { background: #111827; color: #9CA3AF; padding: 50px 20px; text-align: center; border-top: 6px solid var(--c-teal); }  
@@ -150,17 +160,13 @@
         }
         
         .glass-modal-content {
-            background: white; width: 100%; max-width: 520px; border-radius: 24px; 
-            padding: 35px 30px; text-align: center; position: relative; overflow-y: auto;
-            max-height: 90vh; /* Prevents modal from overflowing the screen */
+            background: white; width: 100%; max-width: 550px; border-radius: 24px; 
+            padding: 35px 30px; text-align: center; position: relative;
             box-shadow: 0 25px 50px rgba(0,0,0,0.3), 0 0 30px rgba(66, 133, 244, 0.2);
             animation: bounceIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-height: 95vh; overflow-y: auto; -ms-overflow-style: none; scrollbar-width: none;
         }
-        
-        /* Custom Scrollbar for Modal (just in case it's needed on super tiny screens) */
-        .glass-modal-content::-webkit-scrollbar { width: 6px; }
-        .glass-modal-content::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
-        .glass-modal-content::-webkit-scrollbar-thumb { background: var(--c-teal); border-radius: 10px; }
+        .glass-modal-content::-webkit-scrollbar { display: none; }
 
         .google-modal-bar { position: absolute; top: 0; left: 0; width: 100%; height: 8px; background: var(--g-grad); }
         .red-modal-bar { position: absolute; top: 0; left: 0; width: 100%; height: 8px; background: var(--c-red); }
@@ -169,10 +175,18 @@
         @keyframes bounceIn { 0% { transform: scale(0.8) translateY(-30px); opacity: 0; } 100% { transform: scale(1) translateY(0); opacity: 1; } }
         .spinner-icon { animation: spin 1.5s linear infinite; }
 
+        .welcome-title { font-size: 1.6rem; margin-bottom: 8px; }
+        .welcome-sub { color: #4B5563; margin-bottom: 12px; font-weight: 700; font-size: 1rem; }
+        
         .colorful-info-box {
             background: #f8faff; padding: 18px; border-radius: 16px; border-left: 5px solid var(--c-blue); 
             box-shadow: var(--inset-3d); margin-bottom: 15px; font-size: 0.95rem; color: #374151; 
             line-height: 1.6; font-weight: 700; text-align: left; border: 1px solid #e1e8f0;
+        }
+        
+        .features-badge-box {
+            background: #eef2ff; padding: 12px; border-radius: 12px; margin-bottom: 15px;
+            font-size: 0.85rem; font-weight: 700; color: #4338ca; border: 1px dashed #a5b4fc;
         }
 
         .timer-status-box { background: #f1f5f9; padding: 12px; border-radius: 12px; margin-top: 15px; font-weight: 700; color: #4B5563; font-size: 0.9rem;}
@@ -182,15 +196,29 @@
             border-left: 6px solid var(--c-red); text-align: left; border: 1px solid #ffebeb;
         }
 
-        /* 📱 MOBILE RESPONSIVE TWEAKS (No-Scroll Optimization) 📱 */
+        /* 🔥 📱 MOBILE RESPONSIVE TWEAKS 🔥 */
         @media (max-width: 600px) {
-            .glass-modal-content { padding: 25px 20px; border-radius: 20px; }
-            .google-text-gradient { font-size: 1.4rem !important; }
-            .glass-modal-content p { font-size: 0.85rem !important; margin-bottom: 10px !important; }
-            .colorful-info-box { padding: 12px; font-size: 0.8rem; margin-bottom: 10px; line-height: 1.5; }
-            .timer-status-box { padding: 10px; font-size: 0.8rem; margin-top: 10px; }
-            .btn-tactile { padding: 12px; font-size: 0.95rem; }
-            .card-ifab { transform: scale(1); } /* Prevent overflow on mobile */
+            .mobile-alert-box { padding: 20px 15px; flex-direction: column; gap: 10px; }
+            .mobile-alert-box h3 { font-size: 1.1rem; margin-bottom: 8px; }
+            .mobile-alert-box p { font-size: 0.85rem; margin-bottom: 8px; }
+            
+            .glass-modal-overlay { padding: 10px; }
+            .glass-modal-content { padding: 20px 15px; border-radius: 18px; width: 95%; max-height: 98vh; }
+            .welcome-title { font-size: 1.25rem !important; margin-bottom: 5px !important; }
+            .welcome-sub { font-size: 0.8rem !important; margin-bottom: 8px !important; line-height: 1.4; }
+            
+            .colorful-info-box { padding: 12px; font-size: 0.75rem; margin-bottom: 8px; line-height: 1.4; border-radius: 12px;}
+            .features-badge-box { padding: 8px; font-size: 0.7rem; margin-bottom: 8px; line-height: 1.3; }
+            
+            .timer-status-box { padding: 8px; font-size: 0.75rem; margin-top: 8px; }
+            .glass-modal-content p { font-size: 0.75rem !important; margin-bottom: 6px !important; }
+            
+            .btn-tactile { padding: 12px; font-size: 0.9rem; margin-top: 8px; border-radius: 12px;}
+            
+            .restricted-box { padding: 12px; font-size: 0.8rem; margin: 10px 0; }
+            .restricted-box p { font-size: 0.8rem !important; line-height: 1.4 !important; }
+            
+            .card-ifab { transform: scale(1); }
             .card-ifab:hover { transform: scale(1.02) translateY(-2px); }
         }
 
@@ -207,7 +235,8 @@
 <body>  
     
     <div class="top-bar">  
-        <span class="material-icons-round" style="color: white; font-size: 24px; margin-right: 12px;">translate</span>
+        <!-- Note: Added notranslate class to FIX Google Translate Icon bug -->
+        <span class="material-icons-round notranslate" translate="no" style="color: white; font-size: 24px; margin-right: 12px;">translate</span>
         <div id="google_translate_element"></div>
     </div>  
 
@@ -218,39 +247,56 @@
     </header>  
 
     <main class="container">  
+        
+        <!-- 📱 New Mobile Usage Guideline Box 📱 -->
+        <div class="mobile-alert-box">
+            <span class="material-icons-round notranslate" translate="no" style="font-size: 40px; color: var(--c-blue);">phonelink_setup</span>
+            <div style="width: 100%;">
+                <h3>গুরুত্বপূর্ণ ব্যবহার নির্দেশিকা</h3>
+                <p>আরও উন্নত ও আরামদায়ক ব্যবহারের অভিজ্ঞতার জন্য, আপনি যদি Mobile Device থেকে এই ওয়েবসাইটটি ব্যবহার করেন, তাহলে আপনার Browser-এর <strong>Desktop Site</strong> বা <strong>Desktop Mode</strong> অপশনটি চালু করার পরামর্শ দেওয়া হচ্ছে।</p>
+                <p>বর্তমানে Mobile Version-কে আরও দ্রুত, স্থিতিশীল এবং সম্পূর্ণ Responsive করার কাজ চলমান রয়েছে। কিছু Mobile Device বা Browser-এ Layout, Typography অথবা কিছু Feature সাময়িকভাবে ভিন্নভাবে প্রদর্শিত হতে পারে।</p>
+                <p>আমরা নিয়মিত উন্নয়নের মাধ্যমে Mobile, Tablet, Laptop এবং Desktop—সব প্ল্যাটফর্মে আরও উন্নত, নির্ভরযোগ্য এবং Professional অভিজ্ঞতা নিশ্চিত করতে কাজ করছি।</p>
+                <p style="margin-bottom: 15px;">আপনার সহযোগিতা, ধৈর্য এবং মূল্যবান মতামতের জন্য আন্তরিক ধন্যবাদ।</p>
+                
+                <hr style="border: 0; border-top: 1px dashed rgba(66, 133, 244, 0.3); margin: 15px 0;">
+                
+                <h3 style="color: var(--c-blue); font-size: 1.1rem; margin-bottom: 5px;">Recommended</h3>
+                <p style="font-size: 0.9rem;">For the best viewing experience on Mobile Devices, please enable your browser's <strong>Desktop Site</strong> or <strong>Desktop Mode</strong>.</p>
+                <p style="margin-top: 8px; font-weight: 800; color: var(--c-blue); font-size: 0.85rem;">ASSRA Official Website • Beta v4.0</p>
+            </div>
+        </div>
           
         <div class="card card-membership">  
             <div>
-                <div class="card-header"><span class="material-icons-round">person_add_alt_1</span><h2>সদস্যপদ আবেদন</h2></div>  
+                <div class="card-header"><span class="material-icons-round notranslate" translate="no">person_add_alt_1</span><h2>সদস্যপদ আবেদন</h2></div>  
                 <p>অ্যাসোসিয়েশনের নতুন সদস্য হওয়ার জন্য অনলাইনে আবেদন ফর্ম পূরণ করুন।</p>  
             </div>
-            <a href="https://forms.gle/JZRYHVyoqFffUX7B8" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-blue">আবেদন করুন</a>  
+            <button onclick="openFormLoader('https://forms.gle/JZRYHVyoqFffUX7B8')" class="btn-tactile btn-blue">আবেদন করুন</button>  
         </div>  
 
         <div class="card card-notice">  
             <div>
-                <div class="card-header"><span class="material-icons-round">campaign</span><h2>নোটিশ বোর্ড</h2></div>  
+                <div class="card-header"><span class="material-icons-round notranslate" translate="no">campaign</span><h2>নোটিশ বোর্ড</h2></div>  
                 <p>আমাদের সাম্প্রতিক ইভেন্ট, মিটিং এবং অ্যাসোসিয়েশনের সকল অফিসিয়াল আপডেট।</p>  
             </div>
             <div id="notice-list"><div style="text-align:center; padding:10px; color:#8E24AA; font-weight: 700;">লোড হচ্ছে...</div></div>  
         </div>  
 
-        <!-- 🔥 IFAB VIP CARD 🔥 -->
         <div class="card card-ifab">  
             <div class="vip-badge">IMPORTANT</div>
             <div>
-                <div class="card-header"><span class="material-icons-round">menu_book</span><h2>লজ অফ দ্য গেম (IFAB)</h2></div>  
+                <div class="card-header"><span class="material-icons-round notranslate" translate="no">menu_book</span><h2>লজ অফ দ্য গেম (IFAB)</h2></div>  
                 <p>ফুটবলের সর্বশেষ IFAB Laws of the Game 2026/27-এর অফিসিয়াল PDF নথি।</p>  
             </div>
             <div>
-                <button onclick="openPdfLoader('https://drive.google.com/file/d/195McUzbnNvqW2E0bS1SoILdnAiKdug_-/view?usp=drivesdk')" class="btn-tactile btn-gold"><span class="material-icons-round" style="font-size:22px;">description</span> PDF ১: পরিবর্তনসমূহ</button>
-                <button onclick="openPdfLoader('https://drive.google.com/file/d/1q3Cd94ssiO-NirxeaR2rQ31Oh_jg-rx7/view?usp=drivesdk')" class="btn-tactile btn-gold" style="margin-bottom:0;"><span class="material-icons-round" style="font-size:22px;">library_books</span> PDF ২: সম্পূর্ণ নিয়ম</button>
+                <button onclick="openPdfLoader('https://drive.google.com/file/d/195McUzbnNvqW2E0bS1SoILdnAiKdug_-/view?usp=drivesdk')" class="btn-tactile btn-gold"><span class="material-icons-round notranslate" translate="no" style="font-size:22px;">description</span> PDF ১: পরিবর্তনসমূহ</button>
+                <button onclick="openPdfLoader('https://drive.google.com/file/d/1q3Cd94ssiO-NirxeaR2rQ31Oh_jg-rx7/view?usp=drivesdk')" class="btn-tactile btn-gold" style="margin-bottom:0;"><span class="material-icons-round notranslate" translate="no" style="font-size:22px;">library_books</span> PDF ২: সম্পূর্ণ নিয়ম</button>
             </div>
         </div>  
 
         <div class="card card-referee">  
             <div>
-                <div class="card-header"><span class="material-icons-round">sports</span><h2>অফিসিয়াল রেফারি তথ্য</h2></div>  
+                <div class="card-header"><span class="material-icons-round notranslate" translate="no">sports</span><h2>অফিসিয়াল রেফারি তথ্য</h2></div>  
                 <p>আরামবাগ অ্যাসোসিয়েশনের রেজিস্টার্ড রেফারিদের তালিকা এবং বিস্তারিত তথ্য।</p>  
             </div>
             <a href="#" onclick="openRefereeModal(event)" class="btn-tactile btn-green">তালিকা দেখুন</a>  
@@ -258,29 +304,29 @@
 
         <div class="card card-social">
             <div>
-                <div class="card-header"><span class="material-icons-round">public</span><h2>Official Social Media</h2></div>
+                <div class="card-header"><span class="material-icons-round notranslate" translate="no">public</span><h2>Official Social Media</h2></div>
                 <p>সর্বশেষ আপডেট জানতে শুধুমাত্র আমাদের Official অ্যাকাউন্টগুলো অনুসরণ করুন।</p>
             </div>
             <div>
-                <a href="https://www.facebook.com/share/1E8ACWBMDz/" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-blue" style="margin-bottom: 12px;"><span class="material-icons-round">facebook</span> Facebook</a>
-                <a href="https://www.instagram.com/a.s.r.s.c?igsh=dmlibngwMmwxenU3" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-insta"><span class="material-icons-round">photo_camera</span> Instagram</a>
+                <a href="https://www.facebook.com/share/1E8ACWBMDz/" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-blue" style="margin-bottom: 12px;"><span class="material-icons-round notranslate" translate="no">facebook</span> Facebook</a>
+                <a href="https://www.instagram.com/a.s.r.s.c?igsh=dmlibngwMmwxenU3" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-insta"><span class="material-icons-round notranslate" translate="no">photo_camera</span> Instagram</a>
             </div>
         </div>
 
         <div class="card card-support">  
             <div>
-                <div class="card-header"><span class="material-icons-round">support_agent</span><h2>হেল্প এন্ড সাপোর্ট</h2></div>  
+                <div class="card-header"><span class="material-icons-round notranslate" translate="no">support_agent</span><h2>হেল্প এন্ড সাপোর্ট</h2></div>  
                 <p>যেকোনো অফিসিয়াল তথ্য যাচাই, সদস্যপদ, প্রযুক্তিগত সহায়তা বা অভিযোগের জন্য।</p>  
             </div>
             <div>
-                <a href="https://wa.me/917063374492" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-whatsapp"><span class="material-icons-round">whatsapp</span> WhatsApp Support</a>
-                <a href="mailto:arambaghsub.sports.refereess@gmail.com" class="btn-tactile btn-red"><span class="material-icons-round">email</span> Email Support</a>
+                <a href="https://wa.me/917063374492" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-whatsapp"><span class="material-icons-round notranslate" translate="no">whatsapp</span> WhatsApp Support</a>
+                <a href="mailto:arambaghsub.sports.refereess@gmail.com" class="btn-tactile btn-red"><span class="material-icons-round notranslate" translate="no">email</span> Email Support</a>
             </div>
         </div>  
 
         <div class="warning-box">  
-            <span class="material-icons-round" style="font-size: 45px; color: var(--c-orange);">warning_amber</span>  
-            <div>  
+            <span class="material-icons-round notranslate" translate="no" style="font-size: 40px; color: var(--c-orange);">warning_amber</span>  
+            <div style="width: 100%;">  
                 <h3>গুরুত্বপূর্ণ সতর্কবার্তা</h3>  
                 <p>অ্যাসোসিয়েশনের সকল অফিসিয়াল তথ্য শুধুমাত্র এই ওয়েবসাইট ও Official Social Media-র মাধ্যমেই প্রকাশ করা হয়। কোনো ব্যক্তি বা ভুয়া WhatsApp Group-এর মাধ্যমে অর্থ চাইলে তা উপেক্ষা করুন।</p>
                 <p style="margin-top: 10px; color: #B25E02;">— Executive Committee</p>
@@ -297,38 +343,68 @@
 
     <!-- ================= RESPONSIVE MODALS ================= -->
 
+    <!-- Welcome Popup -->
     <div id="welcomeModal" class="glass-modal-overlay">
         <div class="glass-modal-content">
             <div class="google-modal-bar"></div>
             
-            <h2 class="google-text-gradient" style="margin-bottom: 8px;">👋 Welcome to ASSRA</h2>
-            <p style="color: #4B5563; margin-bottom: 12px; font-weight: 700;">আরামবাগ সাবডিভিশনাল স্পোর্টস এন্ড রেফারি অ্যাসোসিয়েশনের অফিসিয়াল ওয়েবসাইটে স্বাগতম।</p>
+            <h2 class="google-text-gradient welcome-title">👋 Welcome to the Official Website</h2>
+            <p class="welcome-sub">আরামবাগ সাবডিভিশনাল স্পোর্টস এন্ড রেফারি অ্যাসোসিয়েশনের<br>অফিসিয়াল ওয়েবসাইটে আপনাকে আন্তরিক স্বাগতম।</p>
             
             <div class="colorful-info-box">
-                এই সংস্করণে ওয়েবসাইটের UI, UX, Performance আরও উন্নত করা হয়েছে। <br>
-                🌐 ব্যবহারকারীদের সুবিধার জন্য Google Translate সংযুক্ত করা হয়েছে।
+                🚀 আপনি বর্তমানে ASSRA Official Website • Beta v4.0 ব্যবহার করছেন। <br><br>
+                এই সংস্করণে ওয়েবসাইটের User Interface (UI), User Experience (UX), Performance, Stability এবং Responsive Design আরও উন্নত করা হয়েছে, যাতে Mobile, Tablet, Laptop এবং Desktop—সব প্ল্যাটফর্মে আরও দ্রুত, নিরাপদ এবং ব্যবহারবান্ধব অভিজ্ঞতা নিশ্চিত করা যায়।<br><br>
+                🌐 ব্যবহারকারীদের সুবিধার জন্য Google Translate সংযুক্ত করা হয়েছে। ওয়েবসাইটের উপরের অংশ থেকে সহজেই বাংলা, English এবং हिन्दी ভাষা নির্বাচন করে কনটেন্ট পড়া যাবে।<br><br>
+                বর্তমানে ওয়েবসাইটের কিছু ফিচার এখনও উন্নয়নাধীন (Beta) রয়েছে। আপনার মূল্যবান মতামত, পরামর্শ ও সহযোগিতা আমাদের ভবিষ্যৎ উন্নয়নে গুরুত্বপূর্ণ ভূমিকা রাখবে।
             </div>
 
-            <div><p style="font-size: 0.85rem; color: #6B7280; font-weight: 800;">💻 ডেভেলপমেন্ট: Mr. Swastik Halder</p></div>
+            <div class="features-badge-box">
+                🚀 Official Beta v4.0 <br> Enhanced UI/UX • Improved Performance • Better Stability • Multi-Language Support
+            </div>
+
+            <div>
+                <p style="color: #4B5563; font-weight: 800; margin-bottom: 5px;">💻 পরিকল্পনা, ডিজাইন ও ডেভেলপমেন্ট<br><span style="color: var(--c-blue);">Mr. Swastik Halder</span></p>
+            </div>
+            
+            <p style="color: #4B5563; font-weight: 600;">
+                যেকোনো Bug, ত্রুটি, মতামত বা প্রযুক্তিগত সহায়তার জন্য অনুগ্রহ করে Help & Support বিভাগের মাধ্যমে আমাদের সঙ্গে যোগাযোগ করুন।<br>
+                <strong style="color: #1F2937;">আপনার মূল্যবান সহযোগিতা ও সমর্থনের জন্য আন্তরিক ধন্যবাদ।</strong>
+            </p>
 
             <div class="timer-status-box">
-                <div id="welcomeAutoCloseInfo">⏳ ২০ সেকেন্ড পরে স্বয়ংক্রিয়ভাবে বন্ধ হবে।</div>
+                <div id="welcomeAutoCloseInfo">⏳ এই বার্তাটি ২০ সেকেন্ড পরে স্বয়ংক্রিয়ভাবে বন্ধ হয়ে যাবে।</div>
                 <div id="welcomeSkipInfo" style="margin-top: 5px; color: var(--c-purple);">⏭️ Skip Button ৭ সেকেন্ড পরে প্রদর্শিত হবে।</div>
             </div>
 
-            <button id="welcomeSkipBtn" onclick="closeWelcomePopup()" class="btn-tactile btn-blue" style="display: none; margin-top: 15px;">
-                <span class="material-icons-round">skip_next</span> Skip / বন্ধ করুন
+            <button id="welcomeSkipBtn" onclick="closeWelcomePopup()" class="btn-tactile btn-blue" style="display: none;">
+                <span class="material-icons-round notranslate" translate="no">skip_next</span> Skip / বন্ধ করুন
             </button>
+            
+            <div style="font-size: 0.65rem; color: #9CA3AF; border-top: 1px dashed rgba(0,0,0,0.1); padding-top: 8px; margin-top: 10px; font-weight: 700; line-height: 1.4;">
+                Arambagh Subdivisional Sports & Referee's Association (ASSRA)<br>
+                Official Website • Beta v4.0<br>
+                © 2026–Present | All Rights Reserved.
+            </div>
         </div>
     </div>
 
-    <!-- PDF Loading Modal -->
+    <!-- Form Loading Modal (2 Seconds) -->
+    <div id="formLoaderModal" class="glass-modal-overlay">
+        <div class="glass-modal-content" style="max-width: 320px; padding: 30px 20px;">
+            <div class="google-modal-bar" style="background: var(--c-blue);"></div>
+            <span class="material-icons-round spinner-icon notranslate" translate="no" style="font-size: 50px; color: var(--c-blue);">assignment</span>
+            <h3 style="margin-top: 15px; color: var(--c-blue); font-size: 1.3rem;">📝 ফর্ম প্রস্তুত হচ্ছে...</h3>
+            <p style="color: #4B5563; margin-top: 5px; font-weight: 700; font-size: 0.9rem;">অনুগ্রহ করে কয়েক মুহূর্ত অপেক্ষা করুন।</p>
+        </div>
+    </div>
+
+    <!-- PDF Loading Modal (2.5 Seconds) -->
     <div id="pdfLoaderModal" class="glass-modal-overlay">
-        <div class="glass-modal-content" style="max-width: 350px;">
+        <div class="glass-modal-content" style="max-width: 320px; padding: 30px 20px;">
             <div class="google-modal-bar" style="background: var(--c-gold);"></div>
-            <span class="material-icons-round spinner-icon" style="font-size: 60px; color: var(--c-gold);">description</span>
-            <h3 style="margin-top: 15px; color: #B25E02;">📄 PDF প্রস্তুত হচ্ছে...</h3>
-            <p style="color: #5C3A10; margin-top: 5px; font-weight: 700;">অনুগ্রহ করে অপেক্ষা করুন।</p>
+            <span class="material-icons-round spinner-icon notranslate" translate="no" style="font-size: 50px; color: var(--c-gold);">description</span>
+            <h3 style="margin-top: 15px; color: #B25E02; font-size: 1.3rem;">📄 PDF প্রস্তুত হচ্ছে...</h3>
+            <p style="color: #5C3A10; margin-top: 5px; font-weight: 700; font-size: 0.9rem;">অনুগ্রহ করে কয়েক মুহূর্ত অপেক্ষা করুন।</p>
         </div>
     </div>
 
@@ -337,24 +413,24 @@
         <div class="glass-modal-content">
             <div id="refLoadingState" style="padding: 20px 0;">
                 <div class="google-modal-bar"></div>
-                <span class="material-icons-round spinner-icon" style="font-size: 60px; color: var(--c-teal);">hourglass_empty</span>
-                <h3 class="google-text-gradient" style="margin-top: 15px;">তথ্য প্রস্তুত হচ্ছে...</h3>
-                <p style="color: #4B5563; margin-top: 10px; font-weight: 700;">রেফারিদের তথ্য যাচাই করা হচ্ছে...</p>
+                <span class="material-icons-round spinner-icon notranslate" translate="no" style="font-size: 55px; color: var(--c-teal);">hourglass_empty</span>
+                <h3 class="google-text-gradient" style="margin-top: 15px; font-size: 1.4rem;">তথ্য প্রস্তুত হচ্ছে...</h3>
+                <p style="color: #4B5563; margin-top: 10px; font-weight: 700; font-size: 0.9rem;">রেফারিদের তথ্য যাচাই করা হচ্ছে...</p>
             </div>
 
             <div id="refRestrictedState" style="display: none;">
                 <div class="red-modal-bar"></div>
-                <h3 style="color: var(--c-red); margin-bottom: 10px; font-weight: 800;">🚫 প্রবেশাধিকার সীমিত</h3>
+                <h3 style="color: var(--c-red); margin-bottom: 10px; font-weight: 800; font-size: 1.3rem;">🚫 প্রবেশাধিকার সীমিত</h3>
                 
                 <div class="restricted-box">
                     <p style="color: #991B1B; font-weight: 800; margin-bottom: 5px;">⚠️ গুরুত্বপূর্ণ বিজ্ঞপ্তি</p>
-                    <p style="color: #7F1D1D; font-weight: 600; line-height: 1.5; font-size: 0.9rem;">রেফারিদের ব্যক্তিগত তথ্যের গোপনীয়তা ও নিরাপত্তা রক্ষার্থে এই বিভাগটি সাধারণ দর্শনার্থীদের জন্য সীমিত রাখা হয়েছে। ভবিষ্যতে Login চালু করা হতে পারে।</p>
+                    <p style="color: #7F1D1D; font-weight: 600; line-height: 1.5; font-size: 0.85rem;">রেফারিদের ব্যক্তিগত তথ্যের গোপনীয়তা ও নিরাপত্তা রক্ষার্থে এই বিভাগটি সাধারণ দর্শনার্থীদের জন্য সীমিত রাখা হয়েছে। ভবিষ্যতে Login চালু করা হতে পারে।</p>
                 </div>
                 
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <a href="https://wa.me/917063374492" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-whatsapp"><span class="material-icons-round">whatsapp</span> WhatsApp Support</a>
-                    <a href="mailto:arambaghsub.sports.refereess@gmail.com" class="btn-tactile btn-red"><span class="material-icons-round">email</span> Email Support</a>
-                    <button onclick="closeRefereeModal()" class="btn-tactile" style="background: #4B5563; box-shadow: 0 6px 0 #374151;"><span class="material-icons-round">arrow_back</span> হোম পেজে ফিরে যান</button>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <a href="https://wa.me/917063374492" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-whatsapp"><span class="material-icons-round notranslate" translate="no">whatsapp</span> WhatsApp Support</a>
+                    <a href="mailto:arambaghsub.sports.refereess@gmail.com" class="btn-tactile btn-red"><span class="material-icons-round notranslate" translate="no">email</span> Email Support</a>
+                    <button onclick="closeRefereeModal()" class="btn-tactile" style="background: #4B5563; box-shadow: 0 6px 0 #374151;"><span class="material-icons-round notranslate" translate="no">arrow_back</span> হোম পেজে ফিরে যান</button>
                 </div>
             </div>
         </div>
@@ -368,13 +444,14 @@
             else document.body.classList.remove('modal-open');
         }
 
-        // 1. Production Welcome Popup Logic
+        // 1. Production Welcome Popup Logic 
         let welcomeCountdownInterval;
         document.addEventListener("DOMContentLoaded", function() {
             const now = Date.now();
             const lastClosedTime = localStorage.getItem('assra_popup_closed_time');
             const isClosedInSession = sessionStorage.getItem('assra_popup_closed_session');
 
+            // Show if not closed in current session OR if closed but 5 minutes have passed
             if (!isClosedInSession || (lastClosedTime && (now - parseInt(lastClosedTime) > 5 * 60 * 1000))) {
                 triggerWelcomePopup();
             }
@@ -382,7 +459,7 @@
 
         function triggerWelcomePopup() {
             document.getElementById('welcomeModal').style.display = 'flex';
-            toggleBodyScroll(true); // Lock background scroll
+            toggleBodyScroll(true); 
             
             let skipTimer = 7, autoCloseTimer = 20;
             welcomeCountdownInterval = setInterval(() => {
@@ -396,7 +473,7 @@
                 }
 
                 if (autoCloseTimer > 0) {
-                    document.getElementById('welcomeAutoCloseInfo').innerHTML = `⏳ ${autoCloseTimer} সেকেন্ড পরে স্বয়ংক্রিয়ভাবে বন্ধ হবে।`;
+                    document.getElementById('welcomeAutoCloseInfo').innerHTML = `⏳ এই বার্তাটি ${autoCloseTimer} সেকেন্ড পরে স্বয়ংক্রিয়ভাবে বন্ধ হয়ে যাবে।`;
                 } else { closeWelcomePopup(); }
             }, 1000);
         }
@@ -404,7 +481,7 @@
         function closeWelcomePopup() {
             clearInterval(welcomeCountdownInterval);
             document.getElementById('welcomeModal').style.display = 'none';
-            toggleBodyScroll(false); // Unlock background scroll
+            toggleBodyScroll(false); 
             sessionStorage.setItem('assra_popup_closed_session', 'true');
             localStorage.setItem('assra_popup_closed_time', Date.now().toString());
         }
@@ -415,13 +492,24 @@
             let html = "";  
             data.forEach((item, index) => {  
                 if(index < 2) { 
-                    html += `<a href="details.html?id=${index}" class="btn-tactile btn-purple"><span class="material-icons-round">arrow_right</span> ${item.Title}</a>`;  
+                    html += `<a href="details.html?id=${index}" class="btn-tactile btn-purple"><span class="material-icons-round notranslate" translate="no">arrow_right</span> ${item.Title}</a>`;  
                 }  
             });  
             document.getElementById('notice-list').innerHTML = html;  
         });  
 
-        // 3. PDF Loader Logic
+        // 3. Form Loader Logic (2 Seconds)
+        function openFormLoader(url) {
+            document.getElementById('formLoaderModal').style.display = 'flex';
+            toggleBodyScroll(true);
+            setTimeout(() => {
+                document.getElementById('formLoaderModal').style.display = 'none';
+                toggleBodyScroll(false);
+                window.open(url, '_blank', 'noopener,noreferrer');
+            }, 2000); // 2 Seconds
+        }
+
+        // 4. PDF Loader Logic (2.5 Seconds)
         function openPdfLoader(url) {
             document.getElementById('pdfLoaderModal').style.display = 'flex';
             toggleBodyScroll(true);
@@ -432,7 +520,7 @@
             }, 2500); 
         }
 
-        // 4. Referee Modal Logic
+        // 5. Referee Modal Logic (3 Seconds check)
         function openRefereeModal(e) {
             e.preventDefault(); 
             document.getElementById('refereeModal').style.display = 'flex';
