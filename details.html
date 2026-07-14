@@ -1,319 +1,185 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <!-- Primary Meta Tags (SEO) -->
-    <title>নোটিশ বিস্তারিত | ASSRA Official</title>
-    <meta name="title" content="নোটিশ বিস্তারিত | ASSRA Official">
-    <meta name="description" content="আরামবাগ সাবডিভিশনাল স্পোর্টস এন্ড রেফারি অ্যাসোসিয়েশনের (ASSRA) অফিসিয়াল নোটিশ, আপডেট এবং বিস্তারিত তথ্য।">
-    
-    <!-- Theme & Fonts -->
-    <meta name="theme-color" content="#0F172A">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        /* CSS Variables & Theme Integration */
-        :root {
-            --header-bg-start: #0F172A;
-            --header-bg-end: #1E3A8A;
-            --footer-start: #111827;
-            --footer-end: #1F2937;
-            --text-dark: #1F2937;
-            --bg-light: #F9FAFB;
-        }
+<!DOCTYPE html>  
+<html lang="bn">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">  
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">  
 
-        /* Base Reset & Ultra HD Optimization */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Noto Sans Bengali', 'Poppins', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-tap-highlight-color: transparent;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+    <!-- Google Search Console Verification Tag -->
+    <meta name="google-site-verification" content="mueCYTMqZ0NOgb0uKAxpE7NUxjXZwgYMecwkRfBixs4" />
 
-        /* Beta Bar */
-        .beta-bar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: linear-gradient(90deg, #2563EB, #7C3AED, #EC4899, #F59E0B, #10B981);
-            color: white;
-            text-align: center;
-            padding: 10px 15px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            letter-spacing: 0.3px;
-        }
+    <title>বিস্তারিত নোটিশ | ASSRA Official v4.0</title>  
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">  
 
-        /* Header Premium Enhancement (Matched with index.html) */
-        header {
-            background: linear-gradient(135deg, var(--header-bg-start), var(--header-bg-end));
-            text-align: center;
-            padding: 60px 20px;
-            position: relative;
-        }
+    <style>  
+        /* Color Mapping Variables (v4.0) */  
+        :root {  
+            --c-teal: #00ACC1;  
+            --c-blue: #4285F4;  
+            --c-red: #EA4335;  
+            --c-green: #34A853;  
+            --c-purple: #8E24AA;  
+            --c-gold: #FBBC05;  
+            --c-orange: #FB8C00;  
+            --bg-light: #F3F6F9;  
+            --dark-footer: #111827;  
+        }  
         
-        .premium-title-bn {
-            font-size: clamp(1.6rem, 4vw, 2.5rem);
-            margin-bottom: 12px;
-            font-weight: 700;
-            background: linear-gradient(to right, #FFFFFF, #93C5FD, #38BDF8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 10px rgba(59, 130, 246, 0.35);
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }  
+        body { font-family: 'Noto Sans Bengali', 'Poppins', sans-serif; background-color: var(--bg-light); color: #333; overflow-x: hidden; }  
 
-        .premium-title-en {
-            font-size: clamp(0.95rem, 2vw, 1.25rem);
-            font-family: 'Poppins', sans-serif;
-            color: #E5E7EB;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.30);
-        }
+        /* Top Language Toggle Bar (Teal) */  
+        .top-bar {  
+            background-color: var(--c-teal);  
+            color: white;  
+            padding: 8px 20px;  
+            display: flex;  
+            justify-content: flex-end;  
+            align-items: center;  
+            font-size: 0.9rem;  
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);  
+        }  
+        .lang-select {  
+            background: transparent; border: 1px solid rgba(255,255,255,0.5); color: white;  
+            padding: 4px 8px; border-radius: 5px; font-family: inherit; outline: none; margin-left: 8px;  
+        }  
+        .lang-select option { color: #333; }  
 
-        .header-rainbow-border {
-            height: 4px;
-            background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853);
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
-
-        /* Details Container & Card */
-        .container {
-            max-width: 900px; /* Perfect reading width */
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 16px;
-            padding: 35px 30px;
-            box-shadow: 0 10px 30px -5px rgba(0,0,0,0.06);
-            border-top: 5px solid #2563EB;
-            min-height: 400px;
-        }
-
-        @media (min-width: 768px) {
-            .card { padding: 50px; }
-        }
-
-        /* Back Button - Premium Styling */
-        .btn-back {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #475569, #334155);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(71, 85, 105, 0.2);
-            margin-bottom: 35px;
-            font-size: 0.95rem;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-back:hover { 
-            background: linear-gradient(135deg, #334155, #1E293B);
-            box-shadow: 0 6px 15px rgba(71, 85, 105, 0.35); 
-            transform: translateX(-4px);
-        }
-
-        /* Notice Details Typography & Readability */
-        .notice-header {
-            border-bottom: 2px dashed #E2E8F0;
-            padding-bottom: 25px;
-            margin-bottom: 30px;
-        }
-
-        .notice-title { 
-            font-size: clamp(1.5rem, 4vw, 2.2rem); 
-            color: #0F172A; 
-            margin-bottom: 15px; 
-            font-weight: 700; 
-            line-height: 1.4;
-        }
-        
-        .notice-date { 
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #F1F5F9;
-            color: #475569;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
-            border: 1px solid #E2E8F0;
-        }
-        
-        .notice-body { 
-            font-size: 1.1rem; 
-            color: #334155; 
-            white-space: pre-wrap; 
-            line-height: 1.8;
-            text-align: justify;
-        }
-        
-        /* Status Boxes */
-        .status-box {
+        /* Minimal Header for Details Page */  
+        header { 
+            background: #fff; 
             text-align: center; 
-            padding: 40px 20px; 
-            border-radius: 12px; 
-            font-weight: 600; 
-            font-size: 1.1rem;
-            margin-top: 20px;
-        }
-        .loading-box { background: #E0F2FE; color: #0284C7; border: 1px solid #BAE6FD; }
-        .error-box { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
-
-        /* Footer Typography Enhancement (Matched with index.html) */
-        footer {
-            background: linear-gradient(180deg, var(--footer-start), var(--footer-end));
-            text-align: center; padding: 50px 20px; margin-top: 60px;
-        }
+            padding: 30px 20px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            margin-bottom: 30px; 
+        }  
+        header h1 { font-size: 1.5rem; color: #1F2937; margin-bottom: 5px; }  
         
-        .footer-official {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            background: linear-gradient(to right, #FFFFFF, #93C5FD);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.25);
-        }
-        
-        .footer-assoc {
-            color: #E5E7EB;
-            font-weight: 600;
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.25);
-        }
-
-        .footer-beta {
-            color: #10B981;
-            font-weight: 600;
-            font-size: 0.95rem;
+        .version-badge {
             display: inline-block;
-            margin-bottom: 25px;
-            background: rgba(16, 185, 129, 0.1);
-            padding: 4px 12px;
+            background-color: var(--c-teal);
+            color: white;
+            padding: 5px 12px;
             border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 6px rgba(0, 172, 193, 0.3);
+            margin-top: 10px;
         }
 
-        .footer-dev-text { color: #FFFFFF; font-size: 1rem; margin-bottom: 20px;}
-        
-        .footer-dev-name {
-            background: linear-gradient(to right, #38BDF8, #60A5FA);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-            font-size: 1.25rem;
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px 40px; min-height: 60vh; }  
+          
+        /* Tactile 3D Back Button */
+        .btn-tactile {  
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;  
+            padding: 10px 20px; border-radius: 12px; font-weight: 600; text-decoration: none; color: white;  
+            background: var(--c-blue); box-shadow: 0 4px 0 #2b5cb8;
+            transition: transform 0.1s, box-shadow 0.1s; border: none; cursor: pointer;  
+            margin-bottom: 25px;
+        }  
+        .btn-tactile:active { transform: translateY(4px); box-shadow: 0 0px 0px transparent !important; }  
+
+        /* 3D Floating Notice Card */  
+        .card {  
+            background: white; border-radius: 16px; padding: 40px;  
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+            border-top: 5px solid var(--c-purple);  
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }  
+        .card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+
+        .notice-title { font-size: 1.6rem; color: #1F2937; margin-bottom: 12px; line-height: 1.4; font-weight: 700; }  
+        .notice-meta { display: inline-flex; align-items: center; gap: 6px; color: #6B7280; font-size: 0.95rem; margin-bottom: 25px; background: #F3F4F6; padding: 6px 15px; border-radius: 20px; font-weight: 600; }  
+        .notice-body { font-size: 1.05rem; line-height: 1.8; color: #374151; white-space: pre-wrap; }  
+
+        /* Professional Footer */  
+        footer { background: var(--dark-footer); color: #9CA3AF; padding: 40px 20px 20px; text-align: center; margin-top: 50px; }  
+        .footer-brand h2 { color: white; font-size: 1.5rem; margin-bottom: 10px; }  
+        .footer-sub { color: var(--c-teal); font-weight: 600; font-size: 1.1rem; margin-bottom: 25px; }  
+        .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }  
+        .footer-links a { color: #D1D5DB; text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }  
+        .footer-links a:hover { color: var(--c-teal); }  
+        .footer-bottom { border-top: 1px solid #374151; padding-top: 20px; font-size: 0.85rem; }  
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
         }
-        
-        .footer-copyright { color: #D1D5DB; font-size: 0.9rem; margin-top: 10px; }
     </style>
-</head>
-<body>
 
-    <!-- Beta Bar -->
-    <div class="beta-bar">
-        🚧 Official Beta v3.0 • ওয়েবসাইটের কিছু ফিচার বর্তমানে উন্নয়নাধীন রয়েছে। আপনার মূল্যবান মতামত, পরামর্শ ও সহযোগিতা আন্তরিকভাবে স্বাগত।
-    </div>
+</head>  
+<body>  
+    
+    <!-- Top Bar with Language Toggle -->
+    <div class="top-bar">  
+        <span class="material-icons-round" style="font-size: 18px;">translate</span>  
+        <select class="lang-select">  
+            <option value="bn">বাংলা (BN)</option>  
+            <option value="en">English (EN)</option>  
+            <option value="hi">हिन्दी (HI)</option>  
+        </select>  
+    </div>  
 
-    <!-- Premium Header -->
-    <header>
-        <h1 class="premium-title-bn">আরামবাগ সাবডিভিশনাল স্পোর্টস এন্ড রেফারি অ্যাসোসিয়েশন</h1>
-        <h2 class="premium-title-en">Arambagh Subdivisional Sports & Referee's Association (ASSRA)</h2>
-        <div class="header-rainbow-border"></div>
-    </header>
+    <header>  
+        <h1>আরামবাগ সাবডিভিশনাল স্পোর্টস এন্ড রেফারি অ্যাসোসিয়েশন</h1>  
+        <div class="version-badge">Official Beta v4.0</div>
+    </header>  
 
-    <!-- Content Area -->
-    <main class="container">
-        <div class="card">
-            <a href="index.html" class="btn-back">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                হোম পেজে ফিরে যান
-            </a>
-            
-            <div id="notice-content">
-                <div class="status-box loading-box">
-                    ⏳ নোটিশের বিস্তারিত তথ্য লোড হচ্ছে, অনুগ্রহ করে অপেক্ষা করুন...
-                </div>
-            </div>
-        </div>
-    </main>
+    <main class="container">  
+        <!-- 3D Tactile Back Button -->
+        <a href="index.html" class="btn-tactile">  
+            <span class="material-icons-round">arrow_back</span> হোম পেজে ফিরে যান  
+        </a>  
 
-    <!-- Premium Footer -->
-    <footer>
-        <div class="footer-official">Official Website</div>
-        <div class="footer-assoc">Arambagh Subdivisional Sports & Referee's Association (ASSRA)</div>
-        <div class="footer-beta">🚧 Official Beta v3.0</div>
-        <p class="footer-dev-text">Designed & Developed by <br><span class="footer-dev-name">Mr. Swastik Halder</span></p>
-        <p class="footer-copyright">© 2026–Present | All Rights Reserved.</p>
-    </footer>
+        <!-- Notice Details Card -->
+        <div class="card">  
+            <div id="notice-content">  
+                <div style="text-align:center; padding:40px; color:var(--c-purple);">  
+                    <span class="material-icons-round" style="font-size:45px; animation: pulse 1.5s infinite;">hourglass_empty</span>  
+                    <p style="margin-top: 10px; font-weight: 600; font-size: 1.1rem;">তথ্য লোড হচ্ছে...</p>  
+                </div>  
+            </div>  
+        </div>  
+    </main>  
 
-    <!-- JavaScript Data Fetch Logic -->
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const noticeId = urlParams.get('id');
-        
-        const API_URL = "https://script.google.com/macros/s/AKfycbzhG400jaJkrrfRcObaLD0qYjCIQEfuEOa362OD9GGldOhF5ts9cF0c4txvgV2XcFDXtA/exec";
-        const contentDiv = document.getElementById('notice-content');
+    <!-- Upgraded Professional Footer -->
+    <footer>  
+        <div class="footer-brand">  
+            <h2>ASSRA Official</h2>  
+            <p class="footer-sub">Arambagh Subdivisional Sports & Referee's Association</p>  
+        </div>  
+        <div class="footer-links">  
+            <a href="#">Terms & Conditions</a>  
+            <a href="#">Privacy Policy</a>  
+            <a href="#">Contact Us</a>  
+            <a href="#">Admin Login</a>  
+        </div>  
+        <div class="footer-bottom">  
+            <p>© 2026 ASSRA. All Rights Reserved. Developed by Swastik Halder.</p>  
+        </div>  
+    </footer>  
 
-        async function fetchNoticeDetails() {
-            if (noticeId === null || noticeId === "") {
-                contentDiv.innerHTML = '<div class="status-box error-box">⚠️ কোনো নির্দিষ্ট নোটিশ নির্বাচন করা হয়নি। অনুগ্রহ করে হোম পেজ থেকে একটি নোটিশ নির্বাচন করুন।</div>';
-                return;
-            }
-
-            try {
-                const response = await fetch(API_URL);
-                const data = await response.json();
-                
-                const notice = data[noticeId];
-                
-                if (notice) {
-                    contentDiv.innerHTML = `
-                        <div class="notice-header">
-                            <h2 class="notice-title">${notice.Title || 'শিরোনাম উপলব্ধ নেই'}</h2>
-                            <div class="notice-date">
-                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                প্রকাশিত তারিখ: ${notice.Date || 'তারিখ পাওয়া যায়নি'}
-                            </div>
-                        </div>
-                        <div class="notice-body">${notice.Description || 'এই নোটিশের কোনো অতিরিক্ত বিবরণ প্রদান করা হয়নি।'}</div>
-                    `;
-                } else {
-                    contentDiv.innerHTML = '<div class="status-box error-box">⚠️ দুঃখিত, নোটিশটি খুঁজে পাওয়া যায়নি বা এটি সিস্টেম থেকে সরিয়ে ফেলা হয়েছে।</div>';
-                }
-            } catch (error) {
-                contentDiv.innerHTML = '<div class="status-box error-box">⚠️ সার্ভার থেকে ডাটা লোড করতে সমস্যা হচ্ছে। আপনার ইন্টারনেট সংযোগটি পরীক্ষা করুন।</div>';
-            }
-        }
-
-        fetchNoticeDetails();
+    <script>  
+        const id = new URLSearchParams(window.location.search).get('id');  
+        fetch("https://script.google.com/macros/s/AKfycbzhG400jaJkrrfRcObaLD0qYjCIQEfuEOa362OD9GGldOhF5ts9cF0c4txvgV2XcFDXtA/exec")  
+        .then(res => res.json()).then(data => {  
+            const item = data[id];  
+            if(item) {  
+                document.getElementById('notice-content').innerHTML = `  
+                    <h1 class="notice-title">${item.Title}</h1>  
+                    <div class="notice-meta"><span class="material-icons-round" style="font-size:18px">calendar_month</span> ${item.Date}</div>  
+                    <hr style="border:0; border-top:1px dashed #E5E7EB; margin-bottom:25px;">  
+                    <div class="notice-body">${item.Description}</div>  
+                `;  
+            } else {  
+                document.getElementById('notice-content').innerHTML = "<p style='color:red; text-align:center; font-weight: 600;'>নোটিশটি পাওয়া যায়নি।</p>";  
+            }  
+        }).catch(err => {  
+            document.getElementById('notice-content').innerHTML = "<p style='color:red; text-align:center; font-weight: 600;'>সার্ভার এরর। অনুগ্রহ করে আবার চেষ্টা করুন।</p>";  
+        });  
     </script>
-</body>
+
+</body>  
 </html>
