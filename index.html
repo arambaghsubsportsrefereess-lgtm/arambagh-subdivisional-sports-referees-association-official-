@@ -18,7 +18,7 @@
     <meta property="og:type" content="website">  
     <meta property="og:url" content="https://arambaghsubsportsrefereess-lgtm.github.io/">  
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">  
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">  
 
     <style>  
@@ -30,135 +30,278 @@
             --c-purple: #8E24AA;  
             --c-gold: #FBBC05;  
             --c-orange: #FB8C00;  
-            --bg-light: #F0F4F8; 
-            --dark-footer: #111827;  
+            --c-indigo: #3F51B5;
+            
+            /* Extreme 3D Variables */
+            --bg-neumorphic: #E4EBF5;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.9);
+            --glass-shadow: 12px 12px 30px rgba(0, 0, 0, 0.08), -12px -12px 30px rgba(255, 255, 255, 0.9);
+            --glass-inset: inset 2px 2px 5px rgba(255, 255, 255, 1), inset -3px -3px 7px rgba(0, 0, 0, 0.03);
+            
+            --dark-footer: #0d1117;  
         }  
 
         * { margin: 0; padding: 0; box-sizing: border-box; }  
-        body { font-family: 'Noto Sans Bengali', 'Poppins', sans-serif; background-color: var(--bg-light); color: #333; overflow-x: hidden; }  
+        
+        body { 
+            font-family: 'Noto Sans Bengali', 'Poppins', sans-serif; 
+            background-color: var(--bg-neumorphic); 
+            background-image: radial-gradient(circle at 15% 20%, rgba(0, 172, 193, 0.06) 0%, transparent 40%),
+                              radial-gradient(circle at 85% 80%, rgba(142, 36, 170, 0.06) 0%, transparent 40%);
+            color: #2D3748; 
+            overflow-x: hidden; 
+            
+            /* GLOBAL 3D TEXT EFFECT (প্রতিটি অক্ষর ও কমার জন্য) */
+            text-shadow: 0.5px 0.5px 1px rgba(255,255,255,0.9), -0.5px -0.5px 1px rgba(0,0,0,0.05);
+        }  
 
-        /* Top Language Toggle Bar */  
+        /* 3D Typography for Headings */
+        h1, h2, h3 {
+            background: linear-gradient(135deg, #111827, #4B5563);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.15), -1px -1px 1px rgba(255,255,255,0.8);
+            font-weight: 800;
+        }
+
+        /* 3D Icons */
+        .material-icons-round {
+            filter: drop-shadow(2px 4px 5px rgba(0,0,0,0.25)) drop-shadow(-1px -1px 2px rgba(255,255,255,0.8));
+        }
+
+        /* Top Language Toggle Bar - 3D Gradient */  
         .top-bar {  
-            background-color: var(--c-teal);  
-            padding: 8px 20px;  
+            background: linear-gradient(135deg, #008394, var(--c-teal), #00BCD4);
+            padding: 10px 20px;  
             display: flex;  
             justify-content: flex-end;  
             align-items: center;  
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);  
-            min-height: 40px;
+            box-shadow: 0 4px 15px rgba(0, 172, 193, 0.4), inset 0 -2px 5px rgba(0,0,0,0.2);  
+            min-height: 45px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
         }  
 
         header { 
-            background: #fff; 
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
             text-align: center; 
-            padding: 20px 20px 40px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-            margin-bottom: 40px; 
-            border-bottom-left-radius: 25px;
-            border-bottom-right-radius: 25px;
+            padding: 25px 20px 45px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05), inset 0 -2px 10px rgba(255,255,255,1); 
+            margin-bottom: 45px; 
+            border-bottom-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+            border-bottom: 2px solid rgba(255,255,255,0.8);
         }  
         
         .hero-banner {
             width: 100%;
             max-width: 1100px;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3), 0 0 0 4px rgba(255,255,255,0.5);
+            margin-bottom: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateZ(0);
         }
-        .hero-banner:hover { transform: scale(1.01); }
+        .hero-banner:hover { 
+            transform: scale(1.02) translateY(-5px) translateZ(0); 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 0 6px rgba(255,255,255,0.8);
+        }
         
         .version-badge {
             display: inline-block;
-            background: linear-gradient(135deg, var(--c-teal), #008394);
+            background: linear-gradient(145deg, var(--c-teal), #007a8a);
             color: white;
-            padding: 6px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            box-shadow: 0 5px 15px rgba(0, 172, 193, 0.4);
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 8px 20px rgba(0, 172, 193, 0.4), inset 2px 2px 4px rgba(255,255,255,0.4), inset -2px -2px 4px rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
             margin-top: 15px;
+            -webkit-text-fill-color: white; /* Fix gradient override */
         }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px 50px; display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }  
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px 50px; display: grid; gap: 35px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }  
           
-        /* Advanced Glassmorphism 3D Card */  
+        /* 🚀 ULTRA 3D NEUMORPHIC CARDS */  
         .card {  
-            background: rgba(255, 255, 255, 0.95); 
-            backdrop-filter: blur(10px); 
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px; padding: 25px;  
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05), inset 0 2px 0 rgba(255,255,255,1);  
+            background: var(--glass-bg); 
+            backdrop-filter: blur(25px); 
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 24px; 
+            padding: 30px;  
+            box-shadow: var(--glass-shadow), var(--glass-inset);  
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
             position: relative; overflow: hidden;  
-            border: 1px solid rgba(255,255,255,0.4);
+            border: 1px solid var(--glass-border);
+            border-bottom: 2px solid rgba(255,255,255,0.4);
+            border-right: 2px solid rgba(255,255,255,0.4);
+            transform: perspective(1000px) translateZ(0);
         }  
+        .card:hover {
+            transform: perspective(1000px) translateY(-12px) scale(1.02) translateZ(0);
+            box-shadow: 15px 25px 45px rgba(0, 0, 0, 0.12), -15px -15px 35px rgba(255, 255, 255, 1), var(--glass-inset);
+        }
         
-        .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }  
-        .card-header .material-icons-round { font-size: 32px; }  
-        .card h2 { font-size: 1.35rem; font-weight: 700; color: #1F2937; }  
-        .card p { color: #4B5563; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; }  
+        .card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }  
+        .card-header .material-icons-round { font-size: 38px; }  
+        .card h2 { font-size: 1.45rem; line-height: 1.3; }  
+        .card p { color: #4B5563; font-size: 1rem; line-height: 1.7; margin-bottom: 25px; font-weight: 600;}  
 
-        /* Advanced Tactile Buttons with Gradient */  
+        /* 🔘 PHYSICAL 3D BUTTONS */  
         .btn-tactile {  
-            display: inline-flex; align-items: center; justify-content: center; gap: 8px;  
-            width: 100%; padding: 14px; border-radius: 14px; font-weight: 600; text-decoration: none; color: white;  
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;  
+            width: 100%; padding: 16px; border-radius: 16px; font-weight: 700; text-decoration: none; color: white !important;  
+            -webkit-text-fill-color: white; /* Fix gradient override */
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); border: none; cursor: pointer;  
-            position: relative; overflow: hidden;
+            position: relative; overflow: hidden; font-family: inherit; font-size: 1.05rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
         }  
-        .btn-tactile:active { transform: translateY(6px); box-shadow: 0 0px 0px transparent !important; }  
+        .btn-tactile:active { 
+            transform: translateY(8px); 
+            box-shadow: inset 0 4px 10px rgba(0,0,0,0.3), inset 0 -2px 5px rgba(255,255,255,0.2) !important; 
+        }  
 
-        /* Dynamic Glowing Shadows & Colors */  
-        .card-membership { border-top: 5px solid var(--c-blue); }  
-        .card-membership:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(66, 133, 244, 0.15); }
+        /* specific button styles with deep 3D shadows */
+        .card-membership { border-top: 6px solid var(--c-blue); }  
         .card-membership .material-icons-round { color: var(--c-blue); }  
-        .btn-blue { background: linear-gradient(135deg, #4285F4, #2b5cb8); box-shadow: 0 6px 0 #1a4291, 0 10px 15px rgba(66, 133, 244, 0.4); }  
+        .btn-blue { 
+            background: linear-gradient(145deg, #5c97f5, #2b5cb8); 
+            box-shadow: 0 8px 0 #1a4291, 0 15px 25px rgba(66, 133, 244, 0.4), inset 0 2px 5px rgba(255,255,255,0.4); 
+        }  
 
-        .card-notice { border-top: 5px solid var(--c-purple); }  
-        .card-notice:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(142, 36, 170, 0.15); }
+        .card-notice { border-top: 6px solid var(--c-purple); }  
         .card-notice .material-icons-round { color: var(--c-purple); }  
-        .btn-purple { background: linear-gradient(135deg, #8E24AA, #6a1880); box-shadow: 0 6px 0 #4a1059, 0 10px 15px rgba(142, 36, 170, 0.4); }  
+        .btn-purple { 
+            background: linear-gradient(145deg, #a532c2, #6a1880); 
+            box-shadow: 0 8px 0 #4a1059, 0 15px 25px rgba(142, 36, 170, 0.4), inset 0 2px 5px rgba(255,255,255,0.4); 
+        }  
 
-        .card-referee { border-top: 5px solid var(--c-green); }  
-        .card-referee:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(52, 168, 83, 0.15); }
+        .card-referee { border-top: 6px solid var(--c-green); }  
         .card-referee .material-icons-round { color: var(--c-green); }  
-        .btn-green { background: linear-gradient(135deg, #34A853, #227337); box-shadow: 0 6px 0 #154c23, 0 10px 15px rgba(52, 168, 83, 0.4); }  
+        .btn-green { 
+            background: linear-gradient(145deg, #44c266, #227337); 
+            box-shadow: 0 8px 0 #154c23, 0 15px 25px rgba(52, 168, 83, 0.4), inset 0 2px 5px rgba(255,255,255,0.4); 
+        }  
 
-        .card-support { border-top: 5px solid var(--c-red); }  
-        .card-support:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(234, 67, 53, 0.15); }
+        .card-support { border-top: 6px solid var(--c-red); }  
         .card-support .material-icons-round { color: var(--c-red); }  
-        .btn-red { background: linear-gradient(135deg, #EA4335, #b82e23); box-shadow: 0 6px 0 #852018, 0 10px 15px rgba(234, 67, 53, 0.4); }  
+        .btn-red { 
+            background: linear-gradient(145deg, #f05a4d, #b82e23); 
+            box-shadow: 0 8px 0 #852018, 0 15px 25px rgba(234, 67, 53, 0.4), inset 0 2px 5px rgba(255,255,255,0.4); 
+        }  
 
         .card-ifab {   
             border: 2px solid var(--c-gold); border-top: 6px solid var(--c-gold);   
-            background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,253,245,0.95));  
-            box-shadow: 0 10px 30px rgba(251, 188, 5, 0.15);  
+            background: linear-gradient(145deg, rgba(255,255,255,0.8), rgba(255,253,245,0.9));  
         }  
-        .card-ifab:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(251, 188, 5, 0.25); }
-        .card-ifab .material-icons-round { color: var(--c-gold); text-shadow: 0 0 15px rgba(251,188,5,0.6); }  
-        .btn-gold { background: linear-gradient(135deg, #FBBC05, #e0a600); color: #222; box-shadow: 0 6px 0 #a37800, 0 10px 15px rgba(251, 188, 5, 0.3); }  
+        .card-ifab .material-icons-round { color: var(--c-gold); filter: drop-shadow(2px 4px 8px rgba(251,188,5,0.6)); }  
+        .btn-gold { 
+            background: linear-gradient(145deg, #ffd147, #d9a000); 
+            color: #333 !important; -webkit-text-fill-color: #333;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+            box-shadow: 0 8px 0 #946d00, 0 15px 25px rgba(251, 188, 5, 0.3), inset 0 2px 5px rgba(255,255,255,0.8); 
+            margin-bottom: 15px;
+        }  
 
+        .card-social { border-top: 6px solid var(--c-indigo); }  
+        .card-social .material-icons-round { color: var(--c-indigo); }  
+        .btn-insta {
+            background: linear-gradient(145deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+            box-shadow: 0 8px 0 #9e1473, 0 15px 25px rgba(220, 39, 67, 0.4), inset 0 2px 5px rgba(255,255,255,0.4);
+        }
+
+        /* 3D Warning Box */
         .warning-box {  
-            background: rgba(255, 244, 229, 0.9); border-left: 6px solid var(--c-orange); padding: 25px; border-radius: 12px;  
-            display: flex; align-items: flex-start; gap: 15px; grid-column: 1 / -1; margin-top: 10px;  
-            box-shadow: 0 8px 20px rgba(251, 140, 0, 0.1);
+            background: linear-gradient(145deg, rgba(255, 244, 229, 0.9), rgba(255, 255, 255, 0.9)); 
+            border-left: 8px solid var(--c-orange); padding: 30px; border-radius: 20px;  
+            display: flex; align-items: flex-start; gap: 20px; grid-column: 1 / -1; margin-top: 15px;  
+            box-shadow: 8px 8px 25px rgba(251, 140, 0, 0.15), -8px -8px 25px rgba(255,255,255,1), inset 2px 2px 5px rgba(255,255,255,1);
+            border: 1px solid rgba(251, 140, 0, 0.2);
         }  
-        .warning-box .material-icons-round { color: var(--c-orange); font-size: 32px; }  
-        .warning-text h3 { color: #B25E02; font-size: 1.15rem; margin-bottom: 5px; font-weight: 700; }  
-        .warning-text p { color: #5C3A10; font-size: 1rem; margin: 0; line-height: 1.5; }  
+        .warning-box .material-icons-round { color: var(--c-orange); font-size: 40px; flex-shrink: 0;}  
+        .warning-text h3 { color: #B25E02; font-size: 1.25rem; margin-bottom: 12px; font-weight: 800; -webkit-text-fill-color: #B25E02;}  
+        .warning-text p { color: #5C3A10; font-size: 1.05rem; margin-bottom: 12px; line-height: 1.7; font-weight: 600;}  
+        .warning-text p:last-child { margin-bottom: 0; }
 
-        footer { background: var(--dark-footer); color: #9CA3AF; padding: 50px 20px 30px; text-align: center; border-top: 4px solid var(--c-teal); }  
-        .footer-brand h2 { color: white; font-size: 1.6rem; margin-bottom: 10px; }  
-        .footer-sub { color: var(--c-teal); font-weight: 600; font-size: 1.1rem; margin-bottom: 25px; }  
-        .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }  
-        .footer-links a { color: #D1D5DB; text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }  
-        .footer-links a:hover { color: var(--c-teal); }  
-        .footer-bottom { border-top: 1px solid #374151; padding-top: 20px; font-size: 0.85rem; }  
+        /* Ultra Premium Footer */
+        footer { 
+            background: linear-gradient(to bottom, #111827, #000000); 
+            color: #9CA3AF; padding: 60px 20px 40px; text-align: center; 
+            border-top: 6px solid var(--c-teal); 
+            box-shadow: inset 0 10px 30px rgba(0,0,0,0.5);
+        }  
+        .footer-brand h2 { 
+            color: white; font-size: 1.8rem; margin-bottom: 10px; 
+            -webkit-text-fill-color: white; text-shadow: 0 5px 15px rgba(0,172,193,0.5);
+        }  
+        .footer-sub { color: var(--c-teal); font-weight: 700; font-size: 1.15rem; margin-bottom: 30px; text-shadow: 0 2px 4px rgba(0,0,0,0.8);}  
+        .footer-links { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 40px; }  
+        .footer-links a { 
+            color: #D1D5DB; text-decoration: none; font-size: 1.05rem; font-weight: 600; 
+            transition: all 0.3s; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }  
+        .footer-links a:hover { color: var(--c-teal); transform: translateY(-3px); }  
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; font-size: 0.95rem; line-height: 1.6; font-weight: 600;}  
+
+        /* --- 3D MODALS (Hyper Glassmorphism) --- */
+        .glass-modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            z-index: 9999; justify-content: center; align-items: center; padding: 20px;
+        }
+        .glass-modal-content {
+            background: rgba(255, 255, 255, 0.85); width: 100%; max-width: 550px; 
+            border-radius: 28px; padding: 40px 30px; text-align: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 2px 2px 10px rgba(255,255,255,1), inset -2px -2px 10px rgba(0,0,0,0.1);
+            border: 2px solid rgba(255,255,255,0.9);
+            animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-height: 90vh; overflow-y: auto;
+        }
+        .modal-state-container { animation: fadeIn 0.4s ease-in; }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes bounceIn { 
+            0% { transform: scale(0.8) translateY(-50px); opacity: 0; } 
+            100% { transform: scale(1) translateY(0); opacity: 1; } 
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .spinner-icon { animation: spin 1.5s linear infinite; filter: drop-shadow(0 0 10px rgba(0,172,193,0.5)); }
+
+        /* Welcome Popup Micro-3D Styling */
+        .welcome-badge-v4 {
+            background: linear-gradient(145deg, #FF9800, #F57C00);
+            color: white; padding: 10px 18px; border-radius: 16px;
+            font-size: 1rem; font-weight: 800; display: inline-block;
+            box-shadow: 0 8px 20px rgba(245, 124, 0, 0.3), inset 2px 2px 4px rgba(255,255,255,0.4); 
+            margin: 18px 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .dev-chip {
+            background: linear-gradient(145deg, #ffffff, #e6e6e6); 
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.1), -4px -4px 10px rgba(255,255,255,1), inset 1px 1px 2px rgba(255,255,255,1);
+            color: var(--c-blue); padding: 10px 20px; border-radius: 30px;
+            font-weight: 800; display: inline-flex; align-items: center; gap: 8px; margin-top: 8px;
+        }
+        .timer-status-box {
+            background: inset 4px 4px 10px rgba(0,0,0,0.05), inset -4px -4px 10px rgba(255,255,255,1); 
+            background-color: #Eef2f5;
+            padding: 15px; border-radius: 16px; box-shadow: inset 3px 3px 6px rgba(0,0,0,0.05), inset -3px -3px 6px rgba(255,255,255,0.8);
+            margin-top: 25px; font-size: 0.95rem; color: #4B5563; font-weight: 700;
+        }
+
+        /* Customizing Restricted Modal internal box */
+        .restricted-box {
+            background: linear-gradient(145deg, #fff0f0, #ffe1e1); padding: 25px; border-radius: 16px; margin: 25px 0; 
+            border-left: 6px solid var(--c-red); text-align: left; 
+            box-shadow: 5px 5px 15px rgba(234, 67, 53, 0.1), -5px -5px 15px rgba(255,255,255,1), inset 2px 2px 5px rgba(255,255,255,1);
+        }
 
         /* Google Translate Widget Fixes */
         .goog-te-gadget { color: transparent !important; font-size: 0px !important; }
-        .goog-te-gadget .goog-te-combo { margin: 0; padding: 6px; border-radius: 6px; border: none; font-family: inherit; font-size: 14px; outline: none; cursor: pointer; font-weight: 600; }
+        .goog-te-gadget .goog-te-combo { margin: 0; padding: 6px; border-radius: 8px; border: none; font-family: inherit; font-size: 14px; outline: none; cursor: pointer; font-weight: 700; box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2); }
         .goog-logo-link { display: none !important; }
         .goog-te-gadget > span { display: none !important; }
         body { top: 0 !important; }
@@ -170,12 +313,12 @@
     
     <!-- Functional Language Translate Bar -->
     <div class="top-bar">  
-        <span class="material-icons-round" style="color: white; font-size: 22px; margin-right: 10px;">translate</span>
+        <span class="material-icons-round" style="color: white; font-size: 24px; margin-right: 12px; filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));">translate</span>
         <div id="google_translate_element"></div>
     </div>  
 
     <header>  
-        <!-- NEW ADVANCED HERO BANNER (আপলোড করা ছবির নতুন নাম দেওয়া হলো) -->
+        <!-- NEW ADVANCED 3D HERO BANNER -->
         <img src="file_0000000020b871fb9dfa54f75f7ddc0a.png" alt="ASSRA Official Banner" class="hero-banner">
         
         <!-- H1 Hidden for SEO purpose -->
@@ -192,7 +335,7 @@
                 <h2>সদস্যপদ আবেদন</h2>  
             </div>  
             <p>অ্যাসোসিয়েশনের নতুন সদস্য হওয়ার জন্য অনলাইনে আবেদন ফর্ম পূরণ করুন।</p>  
-            <a href="https://forms.gle/JZRYHVyoqFffUX7B8" target="_blank" class="btn-tactile btn-blue">আবেদন করুন</a>  
+            <a href="https://forms.gle/JZRYHVyoqFffUX7B8" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-blue">আবেদন করুন</a>  
         </div>  
 
         <div class="card card-notice">  
@@ -202,44 +345,78 @@
             </div>  
             <p>আমাদের সাম্প্রতিক ইভেন্ট, মিটিং এবং অ্যাসোসিয়েশনের সকল অফিসিয়াল আপডেট।</p>  
             <div id="notice-list">  
-                <div style="text-align:center; padding:10px; color:#8E24AA; font-weight: 600;">লোড হচ্ছে...</div>  
+                <div style="text-align:center; padding:15px; color:#8E24AA; font-weight: 800; text-shadow: 1px 1px 1px rgba(255,255,255,1);">লোড হচ্ছে...</div>  
             </div>  
         </div>  
 
+        <!-- IFAB Laws of the Game Section -->
         <div class="card card-ifab">  
             <div class="card-header">  
                 <span class="material-icons-round">menu_book</span>  
                 <h2>লজ অফ দ্য গেম (IFAB)</h2>  
             </div>  
-            <p>ফুটবলের আন্তর্জাতিক নিয়মাবলীর সাম্প্রতিক পরিবর্তন এবং আপডেট জানুন।</p>  
-            <a href="https://drive.google.com/file/d/195McUzbnNvqW2E0bS1SoILdnAiKdug_-/view?usp=drivesdk" target="_blank" class="btn-tactile btn-gold">  
-                <span class="material-icons-round" style="font-size:20px;">download</span> নতুন নিয়মাবলি  
-            </a>  
+            <p>ফুটবলের সর্বশেষ IFAB Laws of the Game 2026/27-এর অফিসিয়াল PDF নথি নিচে দেওয়া হলো।</p>  
+            
+            <button onclick="openPdfLoader('https://drive.google.com/file/d/195McUzbnNvqW2E0bS1SoILdnAiKdug_-/view?usp=drivesdk')" class="btn-tactile btn-gold">  
+                <span class="material-icons-round" style="font-size:22px; filter:none;">description</span> PDF ১: নতুন পরিবর্তনসমূহ  
+            </button>
+            <button onclick="openPdfLoader('https://drive.google.com/file/d/1q3Cd94ssiO-NirxeaR2rQ31Oh_jg-rx7/view?usp=drivesdk')" class="btn-tactile btn-gold" style="background: linear-gradient(145deg, #f5d16c, #e0a600); margin-bottom: 0;">  
+                <span class="material-icons-round" style="font-size:22px; filter:none;">library_books</span> PDF ২: সম্পূর্ণ নিয়মাবলী  
+            </button>
         </div>  
 
+        <!-- Official Referees Restricted Section -->
         <div class="card card-referee">  
             <div class="card-header">  
                 <span class="material-icons-round">sports</span>  
                 <h2>অফিসিয়াল রেফারিদের তথ্য</h2>  
             </div>  
             <p>আরামবাগ অ্যাসোসিয়েশনের রেজিস্টার্ড রেফারিদের তালিকা এবং বিস্তারিত তথ্য।</p>  
-            <a href="#" class="btn-tactile btn-green">তালিকা দেখুন</a>  
+            <a href="#" onclick="openRefereeModal(event)" class="btn-tactile btn-green">তালিকা দেখুন</a>  
         </div>  
+
+        <!-- Social Media Section -->
+        <div class="card card-social">
+            <div class="card-header">
+                <span class="material-icons-round">public</span>
+                <h2>Official Social Media</h2>
+            </div>
+            <p>অ্যাসোসিয়েশনের সর্বশেষ আপডেট, নোটিশ এবং কার্যক্রম জানতে শুধুমাত্র আমাদের Official অ্যাকাউন্টগুলো অনুসরণ করুন।</p>
+            
+            <a href="https://www.facebook.com/share/1E8ACWBMDz/" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-blue" style="margin-bottom: 16px;">
+                <span class="material-icons-round" style="filter:none;">facebook</span> Facebook
+            </a>
+            <a href="https://www.instagram.com/a.s.r.s.c?igsh=dmlibngwMmwxenU3" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-insta">
+                <span class="material-icons-round" style="filter:none;">photo_camera</span> Instagram
+            </a>
+        </div>
 
         <div class="card card-support">  
             <div class="card-header">  
                 <span class="material-icons-round">support_agent</span>  
                 <h2>হেল্প এন্ড সাপোর্ট</h2>  
             </div>  
-            <p>যেকোনো জিজ্ঞাসা বা প্রযুক্তিগত সহায়তার জন্য আমাদের টিমের সাথে যোগাযোগ করুন।</p>  
-            <a href="#" class="btn-tactile btn-red">যোগাযোগ করুন</a>  
+            <p>যেকোনো অফিসিয়াল তথ্য যাচাই, সদস্যপদ, প্রযুক্তিগত সহায়তা বা অভিযোগের জন্য আমাদের টিমের সাথে যোগাযোগ করুন।</p>  
+            
+            <a href="https://wa.me/917063374492" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-green" style="margin-bottom: 16px; background: linear-gradient(145deg, #32e070, #1da851); box-shadow: 0 8px 0 #15823d, 0 15px 25px rgba(37, 211, 102, 0.4), inset 0 2px 5px rgba(255,255,255,0.4);">
+                <span class="material-icons-round" style="filter:none;">whatsapp</span> WhatsApp Support
+            </a>
+            <a href="mailto:arambaghsub.sports.refereess@gmail.com" class="btn-tactile btn-red">
+                <span class="material-icons-round" style="filter:none;">email</span> Email Support
+            </a>
         </div>  
 
+        <!-- 3D Important Warning Box -->
         <div class="warning-box">  
             <span class="material-icons-round">warning_amber</span>  
             <div class="warning-text">  
                 <h3>গুরুত্বপূর্ণ সতর্কবার্তা</h3>  
-                <p>আমাদের অ্যাসোসিয়েশন কোনো আর্থিক লেনদেনের জন্য ব্যক্তিগত মেসেজ বা ইমেইল পাঠায় না। যেকোনো প্রতারণা থেকে সতর্ক থাকুন।</p>  
+                <p>অ্যাসোসিয়েশনের সকল অফিসিয়াল তথ্য, নোটিশ, সদস্যপদ সংক্রান্ত ঘোষণা এবং যোগাযোগ শুধুমাত্র এই অফিসিয়াল ওয়েবসাইট ও প্রদর্শিত Official Social Media Account-এর মাধ্যমেই প্রকাশ করা হয়।</p>
+                <p>কোনো ব্যক্তি, তৃতীয় পক্ষ, ভুয়া Facebook Page, WhatsApp Group, Email, Website বা ব্যক্তিগত বার্তার মাধ্যমে অর্থ, ব্যক্তিগত তথ্য বা সদস্যপদের আবেদন চাইলে তা সম্পূর্ণ উপেক্ষা করুন এবং সতর্ক থাকুন।</p>
+                <p>অ্যাসোসিয়েশন কখনোই ব্যক্তিগত WhatsApp Chat, SMS বা Email-এর মাধ্যমে আর্থিক লেনদেনের নির্দেশ প্রদান করে না।</p>
+                <p>যেকোনো অফিসিয়াল তথ্য যাচাই, সদস্যপদ, প্রযুক্তিগত সহায়তা বা অভিযোগের জন্য শুধুমাত্র Website-এর Help & Support এবং Official Social Media Section ব্যবহার করুন।</p>
+                <p style="font-weight: 800; color: #B25E02;">আপনার সচেতনতা, সহযোগিতা ও সতর্কতাই আমাদের তথ্য নিরাপত্তা নিশ্চিত করতে সহায়তা করবে।</p>
+                <p style="margin-top: 15px; font-weight: 800; color: #B25E02; font-size: 1.15rem;">— Executive Committee</p>
             </div>  
         </div>  
 
@@ -257,22 +434,214 @@
             <a href="#">Admin Login</a>  
         </div>  
         <div class="footer-bottom">  
-            <p>© 2026 ASSRA. All Rights Reserved. Developed by Swastik Halder.</p>  
+            <p style="color: white; font-weight: 800;">Official Website • Beta v4.0</p>
+            <p style="margin-top: 8px;">© 2026–Present ASSRA. All Rights Reserved.<br>Developed by Swastik Halder.</p>  
         </div>  
     </footer>  
 
+    <!-- ================= 3D MODALS SECTION ================= -->
+
+    <!-- Production Ready Welcome Popup Modal -->
+    <div id="welcomeModal" class="glass-modal-overlay">
+        <div class="glass-modal-content" style="border-top: 8px solid var(--c-teal);">
+            <h2 style="font-size: 1.7rem; color: #1F2937; margin-bottom: 12px; line-height: 1.3;">👋 Welcome to the<br>Official Website</h2>
+            
+            <p style="color: #4B5563; font-size: 1.05rem; line-height: 1.7; margin-bottom: 12px; font-weight: 600;">
+                আরামবাগ সাবডিভিশনাল স্পোর্টস এন্ড রেফারি অ্যাসোসিয়েশনের অফিসিয়াল ওয়েবসাইটে আপনাকে আন্তরিক স্বাগতম।
+            </p>
+            
+            <div class="welcome-badge-v4">🚀 আপনি বর্তমানে ASSRA Official Website • Beta v4.0 ব্যবহার করছেন।</div>
+            
+            <div style="text-align: left; background: inset 2px 2px 5px rgba(0,0,0,0.05); background-color: #F9FAFB; padding: 20px; border-radius: 16px; border: 1px solid #E5E7EB; box-shadow: inset 2px 2px 5px rgba(0,0,0,0.05), inset -2px -2px 5px rgba(255,255,255,1); margin-bottom: 20px; font-size: 0.95rem; color: #374151; line-height: 1.7; font-weight: 600;">
+                এই সংস্করণে ওয়েবসাইটের User Interface (UI), User Experience (UX), Performance, Stability এবং Responsive Design আরও উন্নত করা হয়েছে, যাতে Mobile, Tablet, Laptop এবং Desktop—সব প্ল্যাটফর্মে আরও দ্রুত, নিরাপদ এবং ব্যবহারবান্ধব অভিজ্ঞতা নিশ্চিত করা যায়।
+                <br><br>
+                🌐 ব্যবহারকারীদের সুবিধার জন্য Google Translate সংযুক্ত করা হয়েছে। ওয়েবসাইটের উপরের অংশ থেকে সহজেই বাংলা, English এবং हिन्दी ভাষা নির্বাচন করে কনটেন্ট পড়া যাবে।
+                <br><br>
+                বর্তমানে ওয়েবসাইটের কিছু ফিচার এখনও উন্নয়নাধীন (Beta) রয়েছে। আপনার মূল্যবান মতামত, পরামর্শ ও সহযোগিতা আমাদের ভবিষ্যৎ উন্নয়নে গুরুত্বপূর্ণ ভূমিকা রাখবে।
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <p style="font-size: 0.9rem; color: #6B7280; font-weight: 800; margin-bottom: 5px;">💻 পরিকল্পনা, ডিজাইন ও ডেভেলপমেন্ট</p>
+                <div class="dev-chip">
+                    <span class="material-icons-round" style="font-size: 20px; filter:none;">code</span> Mr. Swastik Halder
+                </div>
+            </div>
+
+            <p style="font-size: 1rem; color: #4B5563; line-height: 1.6; margin-bottom: 20px; font-weight: 600;">
+                যেকোনো Bug, ত্রুটি, মতামত বা প্রযুক্তিগত সহায়তার জন্য অনুগ্রহ করে Help & Support বিভাগের মাধ্যমে আমাদের সঙ্গে যোগাযোগ করুন।
+                <br><br>
+                <strong style="color: #1F2937; font-size: 1.1rem;">আপনার সহযোগিতা ও সমর্থনের জন্য আন্তরিক ধন্যবাদ।</strong>
+            </p>
+
+            <div style="font-size: 0.85rem; color: #9CA3AF; border-top: 2px dashed #E5E7EB; padding-top: 15px; line-height: 1.6; font-weight: 700;">
+                — Executive Committee<br>
+                ASSRA Official • Beta v4.0<br>
+                © 2026–Present | All Rights Reserved.
+            </div>
+
+            <!-- Auto Close & Skip Dynamic Timers -->
+            <div class="timer-status-box">
+                <div id="welcomeAutoCloseInfo">⏳ এই বার্তাটি ২০ সেকেন্ড পরে স্বয়ংক্রিয়ভাবে বন্ধ হয়ে যাবে।</div>
+                <div id="welcomeSkipInfo" style="margin-top: 6px; color: var(--c-purple);">⏭️ Skip Button ৭ সেকেন্ড পরে প্রদর্শিত হবে।</div>
+            </div>
+
+            <button id="welcomeSkipBtn" onclick="closeWelcomePopup()" class="btn-tactile" style="display: none; background: linear-gradient(145deg, #00ACC1, #008394); box-shadow: 0 8px 0 #005f6b, 0 15px 25px rgba(0, 172, 193, 0.4), inset 0 2px 5px rgba(255,255,255,0.4); margin-top: 20px;">
+                <span class="material-icons-round" style="filter:none;">skip_next</span> Skip / বন্ধ করুন
+            </button>
+        </div>
+    </div>
+
+    <!-- PDF Loading Modal -->
+    <div id="pdfLoaderModal" class="glass-modal-overlay">
+        <div class="glass-modal-content" style="max-width: 400px; padding: 50px 30px;">
+            <span class="material-icons-round spinner-icon" style="font-size: 65px; color: var(--c-gold);">description</span>
+            <h3 style="margin-top: 20px; color: #B25E02; font-size: 1.6rem; font-weight: 800; -webkit-text-fill-color: #B25E02;">📄 PDF প্রস্তুত করা হচ্ছে...</h3>
+            <p style="color: #4B5563; margin-top: 15px; font-size: 1.1rem; line-height: 1.7; font-weight: 600;">অনুগ্রহ করে কয়েক মুহূর্ত অপেক্ষা করুন।<br>Official IFAB Document লোড করা হচ্ছে...</p>
+        </div>
+    </div>
+
+    <!-- Referee Restricted Modal -->
+    <div id="refereeModal" class="glass-modal-overlay">
+        <div class="glass-modal-content">
+            
+            <!-- 1. Loading Screen -->
+            <div id="refLoadingState" class="modal-state-container" style="padding: 30px 0;">
+                <span class="material-icons-round spinner-icon" style="font-size: 65px; color: var(--c-teal);">hourglass_empty</span>
+                <h3 style="margin-top: 20px; color: var(--c-teal); font-size: 1.6rem; font-weight: 800; -webkit-text-fill-color: var(--c-teal);">তথ্য প্রস্তুত করা হচ্ছে...</h3>
+                <p style="color: #4B5563; margin-top: 15px; font-size: 1.1rem; line-height: 1.7; font-weight: 600;">অনুগ্রহ করে কয়েক মুহূর্ত অপেক্ষা করুন।<br>রেফারিদের তথ্য যাচাই করা হচ্ছে...</p>
+            </div>
+
+            <!-- 2. Restricted Access Message -->
+            <div id="refRestrictedState" class="modal-state-container" style="display: none;">
+                <h3 style="color: var(--c-red); margin-bottom: 20px; font-size: 1.4rem; font-weight: 800; -webkit-text-fill-color: var(--c-red); line-height: 1.4;">🚫 জনসাধারণের জন্য প্রবেশাধিকার সাময়িকভাবে সীমিত</h3>
+                
+                <div class="restricted-box">
+                    <p style="color: #991B1B; font-weight: 800; font-size: 1.2rem; margin-bottom: 15px;">⚠️ গুরুত্বপূর্ণ বিজ্ঞপ্তি</p>
+                    <p style="color: #7F1D1D; font-size: 1.05rem; line-height: 1.7; margin-bottom: 12px; font-weight: 600;">রেফারিদের ব্যক্তিগত তথ্যের গোপনীয়তা, নিরাপত্তা এবং অ্যাসোসিয়েশনের তথ্য সুরক্ষা নীতিমালা অনুসারে এই বিভাগটি বর্তমানে সাধারণ দর্শনার্থীদের জন্য সীমিত রাখা হয়েছে।</p>
+                    <p style="color: #7F1D1D; font-size: 1.05rem; line-height: 1.7; margin-bottom: 12px; font-weight: 600;">এই ওয়েবসাইটের মাধ্যমে রেফারিদের ব্যক্তিগত তথ্য, যোগাযোগের তথ্য এবং অন্যান্য সংবেদনশীল তথ্য সর্বসাধারণের জন্য প্রকাশ করা হয় না।</p>
+                    <p style="color: #7F1D1D; font-size: 1.05rem; line-height: 1.7; margin-bottom: 12px; font-weight: 600;">ভবিষ্যতে অ্যাসোসিয়েশনের নীতিমালা অনুযায়ী অনুমোদিত সদস্যদের জন্য নিরাপদ Member Login / Secure Access System চালু করা হলে এই সুবিধা প্রদান করা হতে পারে।</p>
+                    <p style="color: #7F1D1D; font-size: 1.05rem; line-height: 1.7; font-weight: 600;">কোনো অফিসিয়াল তথ্য, সদস্যপদ, তথ্য যাচাই অথবা প্রশাসনিক সহায়তার জন্য অনুগ্রহ করে নিচের Help & Support অপশন ব্যবহার করুন।</p>
+                </div>
+                
+                <p style="font-size: 1rem; color: #4B5563; margin-bottom: 30px; line-height: 1.7; font-weight: 600;">আপনার সহযোগিতা ও বোঝাপড়ার জন্য আন্তরিক ধন্যবাদ।<br><br><strong style="color: #1F2937; font-size: 1.1rem;">— Executive Committee</strong><br>Arambagh Subdivisional Sports & Referee's Association (ASSRA)</p>
+                
+                <!-- Buttons -->
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                    <a href="https://wa.me/917063374492" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-green" style="background: linear-gradient(145deg, #32e070, #1da851); box-shadow: 0 8px 0 #15823d, 0 15px 25px rgba(37, 211, 102, 0.4), inset 0 2px 5px rgba(255,255,255,0.4);">
+                        <span class="material-icons-round" style="filter:none;">whatsapp</span> WhatsApp Support
+                    </a>
+                    <a href="mailto:arambaghsub.sports.refereess@gmail.com" class="btn-tactile btn-red" style="box-shadow: 0 8px 0 #852018, 0 15px 25px rgba(234, 67, 53, 0.4), inset 0 2px 5px rgba(255,255,255,0.4);">
+                        <span class="material-icons-round" style="filter:none;">email</span> Email Support
+                    </a>
+                    <button onclick="closeRefereeModal()" class="btn-tactile" style="background: linear-gradient(145deg, #6B7280, #374151); box-shadow: 0 8px 0 #1f2937, 0 15px 25px rgba(75, 85, 99, 0.4), inset 0 2px 5px rgba(255,255,255,0.4); margin-top: 10px;">
+                        <span class="material-icons-round" style="filter:none;">arrow_back</span> হোম পেজে ফিরে যান
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= SCRIPTS ================= -->
+
     <script>  
+        // --- 1. Production Welcome Popup Logic ---
+        let welcomeCountdownInterval;
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const now = Date.now();
+            const lastClosedTime = localStorage.getItem('assra_popup_closed_time');
+            const isClosedInSession = sessionStorage.getItem('assra_popup_closed_session');
+
+            let shouldShowPopup = false;
+
+            if (!isClosedInSession) {
+                shouldShowPopup = true;
+            } else if (lastClosedTime && (now - parseInt(lastClosedTime) > 5 * 60 * 1000)) {
+                shouldShowPopup = true;
+            }
+
+            if (shouldShowPopup) {
+                triggerWelcomePopup();
+            }
+        });
+
+        function triggerWelcomePopup() {
+            const modal = document.getElementById('welcomeModal');
+            modal.style.display = 'flex';
+
+            let skipTimer = 7;
+            let autoCloseTimer = 20;
+
+            const skipInfo = document.getElementById('welcomeSkipInfo');
+            const autoCloseInfo = document.getElementById('welcomeAutoCloseInfo');
+            const skipBtn = document.getElementById('welcomeSkipBtn');
+
+            welcomeCountdownInterval = setInterval(() => {
+                skipTimer--;
+                autoCloseTimer--;
+
+                if (skipTimer > 0) {
+                    skipInfo.innerHTML = `⏭️ Skip Button ${skipTimer} সেকেন্ড পরে প্রদর্শিত হবে।`;
+                } else {
+                    skipInfo.style.display = 'none';
+                    skipBtn.style.display = 'inline-flex';
+                }
+
+                if (autoCloseTimer > 0) {
+                    autoCloseInfo.innerHTML = `⏳ এই বার্তাটি ${autoCloseTimer} সেকেন্ড পরে স্বয়ংক্রিয়ভাবে বন্ধ হয়ে যাবে।`;
+                } else {
+                    closeWelcomePopup();
+                }
+            }, 1000);
+        }
+
+        function closeWelcomePopup() {
+            clearInterval(welcomeCountdownInterval);
+            document.getElementById('welcomeModal').style.display = 'none';
+            sessionStorage.setItem('assra_popup_closed_session', 'true');
+            localStorage.setItem('assra_popup_closed_time', Date.now().toString());
+        }
+
+        // --- 2. Notice Board Fetch ---
         fetch("https://script.google.com/macros/s/AKfycbzhG400jaJkrrfRcObaLD0qYjCIQEfuEOa362OD9GGldOhF5ts9cF0c4txvgV2XcFDXtA/exec")  
         .then(res => res.json()).then(data => {  
             let html = "";  
             data.forEach((item, index) => {  
                 if(index < 2) { 
-                    html += `<a href="details.html?id=${index}" class="btn-tactile btn-purple" style="margin-top:10px; font-weight:600; font-size:0.95rem; justify-content:flex-start; box-shadow: 0 4px 0 #4a1059;">  
-                    <span class="material-icons-round" style="font-size:20px">arrow_right</span> ${item.Title}</a>`;  
+                    html += `<a href="details.html?id=${index}" class="btn-tactile btn-purple" style="margin-top:14px; font-weight:700; font-size:1rem; justify-content:flex-start;">  
+                    <span class="material-icons-round" style="font-size:24px; filter:none;">arrow_right</span> ${item.Title}</a>`;  
                 }  
             });  
             document.getElementById('notice-list').innerHTML = html;  
         });  
+
+        // --- 3. PDF Loader Logic ---
+        function openPdfLoader(url) {
+            document.getElementById('pdfLoaderModal').style.display = 'flex';
+            setTimeout(() => {
+                document.getElementById('pdfLoaderModal').style.display = 'none';
+                window.open(url, '_blank', 'noopener,noreferrer');
+            }, 2500); 
+        }
+
+        // --- 4. Referee Modal Logic ---
+        function openRefereeModal(e) {
+            e.preventDefault(); 
+            document.getElementById('refereeModal').style.display = 'flex';
+            
+            document.getElementById('refLoadingState').style.display = 'block';
+            document.getElementById('refRestrictedState').style.display = 'none';
+            
+            setTimeout(() => {
+                document.getElementById('refLoadingState').style.display = 'none';
+                document.getElementById('refRestrictedState').style.display = 'block';
+            }, 3000); 
+        }
+
+        function closeRefereeModal() {
+            document.getElementById('refereeModal').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
 
     <!-- Google Translate Script -->
