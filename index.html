@@ -1,10 +1,10 @@
 <!DOCTYPE html>  
-<html lang="bn">  
+<html lang="bn" data-theme="auto">  
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">  
     <meta http-equiv="X-UA-Compatible" content="ie=edge">  
-    <meta name="theme-color" content="#f0f4f8">
+    <meta name="theme-color" content="#0f172a" id="meta-theme-color">
 
     <!-- 🌐 Advanced Enterprise SEO & Meta Tags -->
     <title>ASSRA Official | 🆕 🚧 ⚠️ Beta Version 12 Premium Upgrade</title>  
@@ -14,18 +14,25 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://assra-official.org/">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph & Social Meta -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://assra-official.org/">
     <meta property="og:title" content="ASSRA Official Portal | 🆕 🚧 ⚠️ Beta Version 12 Premium Upgrade">
     <meta property="og:description" content="আরামবাগ সাবডিভিশনাল স্পোর্টস এন্ড রেফারি অ্যাসোসিয়েশনের অফিসিয়াল নেক্সট-জেন এন্টারপ্রাইজ পোর্টাল।">
     <meta property="og:image" content="https://assra-official.org/assets/images/banner.jpg">
-    
-    <!-- Google Site Verification -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Mobile Web App Meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ASSRA">
     <meta name="google-site-verification" content="mueCYTMqZ0NOgb0uKAxpE7NUxjXZwgYMecwkRfBixs4">
 
     <!-- Website Icons -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -33,23 +40,25 @@
       "@context": "https://schema.org",
       "@type": "SportsOrganization",
       "name": "ASSRA",
-      "alternateName": "Arambagh Subdivisional Sports & Referee's Association",
       "url": "https://assra-official.org/",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "arambaghsub.sports.refereess@gmail.com",
-        "contactType": "customer support"
-      }
+      "logo": "https://assra-official.org/apple-touch-icon.png"
     }
     </script>
 
     <!-- Performance & Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://script.google.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.onesignal.com">
+    <link rel="dns-prefetch" href="https://cdn.gtranslate.net">
+    
+    <!-- High Priority Preloads -->
+    <link rel="preload" as="image" href="assets/images/banner.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/+91 70633 74492 20260715 234212.jpg" fetchpriority="high">
     
     <!-- Stable Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">  
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" media="print" onload="this.media='all'">  
 
     <!-- 🔥 OneSignal Web Push Notification SDK 🔥 -->
     <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
@@ -66,462 +75,428 @@
 
     <style>  
         /* =========================================================
-           🏛️ PREMIUM ENTERPRISE LIGHT THEME (Glass Morphism)
+           🏗️ ENTERPRISE CSS ARCHITECTURE
            ========================================================= */
         :root {
-            --bg-base: #f0f4f8; 
-            --glass-bg: rgba(255, 255, 255, 0.70); 
-            --glass-border: rgba(255, 255, 255, 0.95);
-            --text-main: #0f172a; 
-            --text-muted: #475569;
+            --bg-base: #0f172a; --glass-surface: rgba(30, 41, 59, 0.75); --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc; --text-muted: #94a3b8;
+            --blob-primary: #38bdf8; --blob-secondary: #8b5cf6; --blob-tertiary: #10b981;
             
-            /* Phase 6: Premium Glow Colors */
-            --glow-blue: rgba(37, 99, 235, 0.4);
-            --glow-gold: rgba(202, 138, 4, 0.4);
-            --glow-green: rgba(5, 150, 105, 0.4);
-            --glow-purple: rgba(124, 58, 237, 0.4);
-            --glow-orange: rgba(234, 88, 12, 0.4);
-            
-            --c-blue: #2563eb; --c-gold: #ca8a04; --c-green: #059669; --c-purple: #7c3aed; --c-orange: #ea580c; --c-rose: #e11d48;
+            /* Enhanced Glow Colors for Icons */
+            --c-blue: #3b82f6; --glow-blue: rgba(59, 130, 246, 0.5);
+            --c-cyan: #06b6d4; --glow-cyan: rgba(6, 182, 212, 0.5);
+            --c-purple: #8b5cf6; --glow-purple: rgba(139, 92, 246, 0.5);
+            --c-emerald: #10b981; --glow-emerald: rgba(16, 185, 129, 0.5);
+            --c-rose: #f43f5e; --glow-rose: rgba(244, 63, 94, 0.5);
+            --c-orange: #f97316; --glow-orange: rgba(249, 115, 22, 0.5);
+            --c-gold: #fbbf24; --glow-gold: rgba(251, 191, 36, 0.5);
             
             --spring-physics: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --bounce-entrance: cubic-bezier(0.34, 1.56, 0.64, 1);
             --cinematic-easing: cubic-bezier(0.2, 0.8, 0.2, 1);
-            --shadow-elevation: 0 15px 35px rgba(15, 23, 42, 0.06);
+            --shadow-elevation: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        [data-theme="light"] {
+            --bg-base: #f8fafc; --glass-surface: rgba(255, 255, 255, 0.85); --glass-border: rgba(148, 163, 184, 0.2);
+            --text-main: #0f172a; --text-muted: #475569; --shadow-elevation: 0 20px 40px rgba(148, 163, 184, 0.15);
+            --blob-primary: #BAE6FD; --blob-secondary: #E9D5FF; --blob-tertiary: #BFDBFE;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         
         body {
-            font-family: 'Inter', 'Noto Sans Bengali', sans-serif; 
-            background-color: var(--bg-base); 
-            color: var(--text-main);
-            overflow-x: hidden; 
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Inter', 'Noto Sans Bengali', sans-serif; background-color: var(--bg-base); color: var(--text-main);
+            overflow-x: hidden; -webkit-font-smoothing: antialiased; transition: background-color 0.5s var(--cinematic-easing), color 0.5s ease;
         }
         body.modal-open { overflow: hidden; height: 100vh; }
 
-        /* 🚀 Phase 1: Premium Startup Loader & Logo Integration */
+        *:focus-visible { outline: 3px solid var(--c-cyan); outline-offset: 4px; border-radius: 8px; }
+
+        /* 🚀 Official Startup Loader (Updated) */
         #startup-loader {
-            position: fixed; inset: 0; background: rgba(240, 244, 248, 0.95); z-index: 999999;
+            position: fixed; inset: 0; background: var(--bg-base); z-index: 999999;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
-            transition: opacity 0.8s var(--cinematic-easing), transform 0.8s var(--cinematic-easing);
+            backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+            transition: opacity 0.8s var(--cinematic-easing), transform 0.8s var(--cinematic-easing), filter 0.8s ease;
+            will-change: opacity, transform, filter;
         }
+        .loader-content { text-align: center; display: flex; flex-direction: column; align-items: center; z-index: 2; }
         
-        .loader-logo {
-            width: clamp(100px, 20vw, 150px);
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border: 3px solid rgba(255,255,255,0.9);
-            animation: loaderFadeScale 1s var(--cinematic-easing), loaderLogoPulse 2.5s infinite alternate var(--spring-physics) 1s;
+        .official-logo-main {
+            width: clamp(100px, 15vw, 150px); height: auto; border-radius: 50%;
+            margin-bottom: 30px; object-fit: contain;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 40px var(--glow-blue);
+            animation: logoFadeScale 1s var(--spring-physics) forwards, logoBreathe 3s infinite alternate ease-in-out 1s;
         }
-        
-        @keyframes loaderFadeScale {
-            0% { opacity: 0; transform: scale(0.5) translateY(20px); filter: drop-shadow(0 0 0 transparent); }
-            100% { opacity: 1; transform: scale(1) translateY(0); filter: drop-shadow(0 10px 25px var(--glow-blue)); }
+        @keyframes logoFadeScale {
+            0% { opacity: 0; transform: scale(0.5) translateY(20px); filter: blur(10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
         }
-        @keyframes loaderLogoPulse {
-            0% { transform: translateY(0) scale(1); filter: drop-shadow(0 10px 25px var(--glow-blue)); } 
-            100% { transform: translateY(-10px) scale(1.03); filter: drop-shadow(0 20px 40px var(--glow-purple)); }
+        @keyframes logoBreathe {
+            0% { transform: scale(1); box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 30px var(--glow-blue); }
+            100% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 50px var(--glow-cyan); }
         }
 
-        .progress-bar-bg { width: 280px; height: 6px; background: rgba(15, 23, 42, 0.08); border-radius: 20px; overflow: hidden; position: relative; }
-        .progress-bar-fill { width: 0%; height: 100%; background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6); background-size: 200% 200%; border-radius: 20px; transition: width 0.1s linear; animation: gradientMove 2s linear infinite; position: relative; }
-        .progress-bar-fill::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent); animation: laserSweep 1.5s infinite; }
+        .progress-bar-bg { width: 240px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 10px; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.4); margin-bottom: 20px;}
+        .progress-bar-fill { width: 0%; height: 100%; background: linear-gradient(90deg, #38bdf8, #06b6d4, #8b5cf6); border-radius: 10px; transition: width 0.1s linear; will-change: width; }
+        .loader-text { color: var(--text-muted); font-size: 0.95rem; font-weight: 600; animation: fadeText 1.5s ease-in-out; }
+        .loader-hiding { opacity: 0; transform: scale(1.05); filter: blur(15px); pointer-events: none; }
         
-        @keyframes laserSweep { 100% { left: 200%; } }
-        @keyframes gradientMove { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
-        .loader-hiding { opacity: 0; transform: scale(1.03); pointer-events: none; }
+        @keyframes fadeText { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
 
-        /* 🌊 Phase 2: Premium Aurora Lighting */
+        /* 🌊 Ambient Background */
         .ambient-lighting { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; overflow: hidden; pointer-events: none; }
-        .aurora-blob { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.45; animation: floatEngine 25s infinite alternate ease-in-out; }
-        .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #bfdbfe; }
-        .blob-2 { bottom: -10%; right: -10%; width: 60vw; height: 60vw; background: #e9d5ff; animation-delay: -5s; }
-        .blob-3 { top: 30%; left: 40%; width: 45vw; height: 45vw; background: #bbf7d0; animation-delay: -10s; }
-        @keyframes floatEngine { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(8%, 12%) scale(1.1); } }
+        .aurora-blob { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.35; will-change: transform; animation: floatEngine 24s infinite alternate ease-in-out; transform: translateZ(0); }
+        .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--blob-primary); }
+        .blob-2 { bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: var(--blob-secondary); animation-delay: -4s; }
+        .blob-3 { top: 35%; left: 35%; width: 45vw; height: 45vw; background: var(--blob-tertiary); animation-delay: -8s; }
+        @media (max-width: 768px) { .aurora-blob { filter: blur(80px); } }
+        @keyframes floatEngine { 0% { transform: translate3d(0, 0, 0) scale(1); } 100% { transform: translate3d(5%, 10%, 0) scale(1.05); } }
 
-        /* 🏛️ Header & Official Logo Integration */
-        header { text-align: center; padding: clamp(40px, 6vw, 60px) 24px 30px; display: flex; flex-direction: column; align-items: center; }
-        
-        .hero-banner { 
-            width: 100%; max-width: 1000px; height: auto; 
-            border-radius: clamp(16px, 2.5vw, 24px); 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 40px rgba(255,255,255,0.6) inset, 0 10px 30px var(--glow-blue); 
-            border: 4px solid #ffffff; margin-bottom: clamp(10px, 2vw, 15px); 
-            transition: transform 0.6s var(--spring-physics), box-shadow 0.6s ease; 
-        }
-        .hero-banner:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 25px 50px rgba(0,0,0,0.15), 0 15px 40px var(--glow-purple); }
-        
-        .official-logo {
-            width: clamp(80px, 15vw, 120px);
-            height: auto;
-            border-radius: 50%;
-            margin: clamp(15px, 3vw, 25px) auto clamp(15px, 3vw, 20px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border: 3px solid rgba(255,255,255,0.9);
-            animation: logoFadeUp 1.2s var(--cinematic-easing) forwards, premiumFloat 4s infinite alternate ease-in-out 1.2s;
-            transition: transform 0.4s var(--spring-physics), filter 0.4s ease;
-        }
-        .official-logo:hover {
-            transform: scale(1.08) rotate(5deg);
-            filter: drop-shadow(0 15px 35px var(--glow-blue));
-        }
-        
-        @keyframes logoFadeUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes premiumFloat {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-10px); filter: drop-shadow(0 12px 30px var(--glow-gold)); }
-        }
+        /* 💎 Top Bar & Nav */
+        .top-bar { background: var(--glass-surface); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); padding: 10px 24px; display: flex; justify-content: space-between; align-items: center; gap: 15px; border-bottom: 1px solid var(--glass-border); position: sticky; top: 0; z-index: 100; }
+        .top-bar-controls { display: flex; gap: 12px; align-items: center; }
+        .icon-btn { background: rgba(148, 163, 184, 0.1); border: 1px solid var(--glass-border); color: var(--text-main); width: 40px; height: 40px; border-radius: 12px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: all 0.3s ease; }
+        .icon-btn:hover { background: rgba(148, 163, 184, 0.2); transform: translateY(-2px); }
 
-        .premium-gradient-text { background: linear-gradient(135deg, var(--c-blue), var(--c-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-size: clamp(1.8rem, 4.5vw, 2.8rem); letter-spacing: -0.03em; }
+        /* Header (Updated: No "ASSRA OFFICIAL PORTAL" Text) */
+        header { text-align: center; padding: clamp(40px, 6vw, 60px) 24px; display: flex; flex-direction: column; align-items: center; }
+        .hero-banner { width: 100%; max-width: 1100px; height: auto; border-radius: clamp(16px, 2.5vw, 28px); box-shadow: var(--shadow-elevation); border: 1px solid var(--glass-border); margin-bottom: 15px; transition: transform 0.6s var(--spring-physics); }
+        .hero-banner:hover { transform: translateY(-8px) scale(1.015); }
 
+        /* ✨ Premium Header Badge */
         .header-beta-badge {
-            background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(16, 185, 129, 0.4); color: var(--c-green);
-            padding: 8px 24px; border-radius: 100px; font-weight: 700; font-size: 0.95rem;
-            display: inline-block; margin-top: 15px; box-shadow: 0 4px 20px var(--glow-green);
+            background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #10b981;
+            padding: 8px 24px; border-radius: 100px; font-weight: 700; font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+            display: inline-block; position: relative; overflow: hidden; backdrop-filter: blur(10px);
+            animation: badgeFloatPulse 4s ease-in-out infinite; will-change: transform, box-shadow;
         }
+        .header-beta-badge::after {
+            content: ''; position: absolute; top: 0; left: -150%; width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transform: skewX(-20deg); animation: badgeLightSweep 7s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+            z-index: 1; pointer-events: none;
+        }
+        @keyframes badgeFloatPulse { 0%, 100% { transform: translateY(0); box-shadow: 0 0 10px rgba(16, 185, 129, 0.1); } 50% { transform: translateY(-2px); box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); } }
+        @keyframes badgeLightSweep { 0%, 75% { left: -150%; } 100% { left: 150%; } }
 
-        /* 📐 Grid & Premium Glass Cards */
+        /* 📐 Grid & Premium Cards */
         .main-grid-container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px) 80px; display: grid; gap: clamp(24px, 3.5vw, 40px); grid-template-columns: repeat(auto-fit, minmax(clamp(290px, 32vw, 360px), 1fr)); }
+        .premium-card { background: var(--glass-surface); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-radius: clamp(24px, 3vw, 36px); padding: clamp(30px, 4.5vw, 45px) clamp(24px, 3.5vw, 36px); border: 1px solid var(--glass-border); display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-elevation); position: relative; overflow: hidden; transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease; }
         
-        .premium-card { 
-            background: var(--glass-bg); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); 
-            border-radius: 24px; padding: clamp(30px, 4.5vw, 40px) clamp(24px, 3.5vw, 32px); 
-            border: 1px solid var(--glass-border); display: flex; flex-direction: column; justify-content: space-between; 
-            box-shadow: var(--shadow-elevation); position: relative; overflow: hidden; 
-            transition: transform 0.5s var(--spring-physics), box-shadow 0.4s ease, border-color 0.4s ease; 
-        }
+        .premium-card:hover { transform: translateY(-6px); }
+
+        .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .premium-card h2 { font-size: clamp(1.3rem, 2.2vw, 1.6rem); font-weight: 700; color: var(--text-main); }
+        .premium-card p { color: var(--text-muted); font-size: clamp(0.9rem, 1.6vw, 1.02rem); line-height: 1.7; margin-bottom: 28px; font-weight: 500; flex-grow: 1; }
+
+        /* 🌟 Advanced Premium Icon System */
+        .premium-icon { font-size: clamp(34px, 4.5vw, 42px) !important; color: var(--text-main); display: inline-block; }
         
-        /* Laser Sweep Effect on Cards */
-        .premium-card::before {
-            content: ''; position: absolute; top: 0; left: -150%; width: 60%; height: 100%; 
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.95), transparent); 
-            transform: skewX(-25deg); transition: 0s; z-index: 1; pointer-events: none;
-        }
-        .premium-card:hover::before { left: 150%; transition: 0.8s ease-in-out; }
-        .premium-card:hover { transform: translateY(-8px); }
+        /* Specific Icon Animations & Glows */
+        .icon-membership { animation: iconPulseBlue 3s infinite; text-shadow: 0 0 15px var(--glow-blue); }
+        .icon-ifab { animation: iconShineGold 4s infinite; text-shadow: 0 0 15px var(--glow-gold); }
+        .icon-referee { animation: iconShieldGreen 3s infinite; text-shadow: 0 0 15px var(--glow-emerald); }
+        .icon-notice { animation: iconFloatPurple 4s infinite alternate; text-shadow: 0 0 15px var(--glow-purple); }
+        .icon-social { animation: iconOrbitCyan 5s infinite linear; text-shadow: 0 0 15px var(--glow-cyan); }
+        .icon-help { animation: iconBreatheEmerald 3s infinite ease-in-out; text-shadow: 0 0 15px var(--glow-emerald); }
+        .icon-warning { animation: iconAlertOrange 2s infinite; text-shadow: 0 0 15px var(--glow-orange); }
 
-        /* Specific Glow Themes */
-        .card-blue:hover { box-shadow: 0 20px 40px var(--glow-blue); border-color: rgba(59, 130, 246, 0.4); }
-        .card-gold:hover { box-shadow: 0 20px 40px var(--glow-gold); border-color: rgba(234, 179, 8, 0.4); }
-        .card-green:hover { box-shadow: 0 20px 40px var(--glow-green); border-color: rgba(16, 185, 129, 0.4); }
-        .card-purple:hover { box-shadow: 0 20px 40px var(--glow-purple); border-color: rgba(139, 92, 246, 0.4); }
-        .card-orange:hover { box-shadow: 0 20px 40px var(--glow-orange); border-color: rgba(249, 115, 22, 0.4); }
+        @keyframes iconPulseBlue { 0%, 100% { transform: scale(1); filter: brightness(1); } 50% { transform: scale(1.1); filter: brightness(1.3); } }
+        @keyframes iconShineGold { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-10deg); } 75% { transform: rotate(10deg); } }
+        @keyframes iconShieldGreen { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.8; transform: scale(0.95); } }
+        @keyframes iconFloatPurple { 0% { transform: translateY(0); } 100% { transform: translateY(-5px); } }
+        @keyframes iconOrbitCyan { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes iconBreatheEmerald { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); text-shadow: 0 0 25px var(--glow-emerald); } }
+        @keyframes iconAlertOrange { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; text-shadow: 0 0 25px var(--glow-orange); } }
 
-        .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; position: relative; z-index: 2; }
-        .card-header .material-icons-round { font-size: clamp(34px, 4.5vw, 42px); color: var(--text-main); }
-        .premium-card h2 { font-size: clamp(1.3rem, 2.2vw, 1.5rem); font-weight: 800; color: var(--text-main); }
-        .premium-card p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 28px; font-weight: 500; flex-grow: 1; position: relative; z-index: 2; }
+        .info-glass-card { background: var(--glass-surface); backdrop-filter: blur(24px); border: 1px solid var(--glass-border); border-left: 6px solid var(--c-blue); padding: clamp(20px, 3vw, 30px); border-radius: 24px; display: flex; align-items: flex-start; gap: 20px; grid-column: 1 / -1; box-shadow: var(--shadow-elevation); }
 
-        .gold-badge { position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #fef08a, #facc15); color: #854d0e; padding: 4px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 800; box-shadow: 0 4px 15px var(--glow-gold); z-index: 2; letter-spacing: 0.5px; text-transform: uppercase; }
+        /* 👆 Touch Feedback & Buttons */
+        .btn-action { display: inline-flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: clamp(15px, 2vw, 18px); border-radius: clamp(14px, 2vw, 20px); font-weight: 600; text-decoration: none; color: #fff !important; border: 1px solid rgba(255,255,255,0.15); cursor: pointer; font-size: clamp(0.98rem, 1.6vw, 1.05rem); position: relative; overflow: hidden; transition: transform 0.2s var(--spring-physics), box-shadow 0.2s ease, filter 0.2s ease; margin-top: 10px; }
+        .btn-action:hover { filter: brightness(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .btn-action:active { transform: scale(0.96); }
 
-        /* 👆 Premium Buttons & Hover Effects */
-        .btn-action { 
-            display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; 
-            padding: 16px; border-radius: 14px; font-weight: 700; text-decoration: none; color: #fff !important; 
-            border: none; cursor: pointer; font-size: 1.05rem; position: relative; overflow: hidden; 
-            transition: transform 0.3s var(--spring-physics), box-shadow 0.3s ease; z-index: 2; margin-top: 10px;
-        }
-        .btn-action:hover { transform: translateY(-3px); }
-        
-        /* Button Ripple & Laser */
-        .btn-action::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transform: skewX(-20deg); transition: 0s; }
-        .btn-action:hover::after { left: 200%; transition: 0.6s ease-in-out; }
-        .btn-action:active::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; background: rgba(255,255,255,0.3); border-radius: 50%; transform: translate(-50%, -50%); animation: ripple 0.4s ease-out; }
-        @keyframes ripple { to { width: 300px; height: 300px; opacity: 0; } }
+        .ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple-anim 0.6s linear; background: rgba(255, 255, 255, 0.4); pointer-events: none; }
+        @keyframes ripple-anim { to { transform: scale(4); opacity: 0; } }
 
-        /* Button Colors */
-        .bg-blue { background: linear-gradient(135deg, #2563eb, #1e40af); box-shadow: 0 8px 20px var(--glow-blue); } 
-        .bg-gold { background: linear-gradient(135deg, #eab308, #a16207); box-shadow: 0 8px 20px var(--glow-gold); margin-bottom: 12px; } 
-        .bg-green { background: linear-gradient(135deg, #10b981, #047857); box-shadow: 0 8px 20px var(--glow-green); } 
-        .bg-purple { background: linear-gradient(135deg, #8b5cf6, #5b21b6); box-shadow: 0 8px 20px var(--glow-purple); margin-bottom: 12px;} 
-        .bg-social { background: linear-gradient(135deg, #0f172a, #1e293b); margin-bottom: 12px; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25); } 
-        .bg-whatsapp { background: linear-gradient(135deg, #22c55e, #166534); box-shadow: 0 8px 20px var(--glow-green); margin-bottom: 12px;}
-        .bg-email { background: linear-gradient(135deg, #f43f5e, #be123c); box-shadow: 0 8px 20px rgba(244, 63, 94, 0.4); }
+        .bg-blue { background: linear-gradient(135deg, #3b82f6, #1d4ed8); } .bg-purple { background: linear-gradient(135deg, #a855f7, #6d28d9); } .bg-emerald { background: linear-gradient(135deg, #10b981, #047857); margin-bottom: 12px;} .bg-cyan { background: linear-gradient(135deg, #06b6d4, #0369a1); } .bg-rose { background: linear-gradient(135deg, #f43f5e, #b91c1c); } .bg-whatsapp { background: linear-gradient(135deg, #22c55e, #166534); margin-bottom: 12px;} .bg-fb { background: linear-gradient(135deg, #1877f2, #0b53a7); margin-bottom: 12px;} .bg-insta { background: linear-gradient(135deg, #f59e0b, #d946ef, #8b5cf6); } .bg-slate { background: linear-gradient(135deg, #475569, #1e293b); }
 
-        .skeleton-loader { width: 100%; height: 50px; background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%); background-size: 200% 100%; animation: skeletonShimmer 1.5s infinite linear; border-radius: 14px; }
+        .card-vip { border-top: 2px solid rgba(16, 185, 129, 0.5); }
+        .vip-tag { position: absolute; top: 20px; right: 20px; background: rgba(16, 185, 129, 0.15); color: var(--c-emerald); padding: 4px 12px; border-radius: 100px; font-size: 0.8rem; font-weight: 800; border: 1px solid rgba(16, 185, 129, 0.3); }
+
+        .skeleton-loader { width: 100%; height: 45px; background: linear-gradient(90deg, rgba(148,163,184,0.1) 25%, rgba(148,163,184,0.2) 50%, rgba(148,163,184,0.1) 75%); background-size: 200% 100%; animation: skeletonShimmer 1.5s infinite linear; border-radius: 14px; }
         @keyframes skeletonShimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 
-        /* 🪟 Premium Glass Modal Framework */
-        .glass-modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.5); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); z-index: 10000; justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: opacity 0.5s ease; }
+        /* 🪟 Advanced Glass Modals */
+        .glass-modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); z-index: 10000; justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: opacity 0.4s var(--cinematic-easing); }
         .glass-modal-overlay.show { display: flex; opacity: 1; }
+        .glass-modal-overlay.hiding { opacity: 0; }
+        .glass-modal-overlay.hiding .glass-modal-content { transform: scale(0.92) translateY(30px); }
         
         .glass-modal-content {
-            background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255,255,255,1); width: 100%; max-width: 550px; 
-            border-radius: 28px; padding: 40px; text-align: center; 
-            transform: scale(0.9) translateY(30px); transition: transform 0.6s var(--spring-physics), opacity 0.5s ease;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2); max-height: 90vh; overflow-y: auto; opacity: 0;
+            background: var(--bg-base); border: 1px solid var(--glass-border);
+            width: 100%; max-width: 600px; border-radius: 32px; padding: clamp(35px, 5vw, 50px) clamp(24px, 4vw, 40px);
+            text-align: center; transform: scale(0.96) translateY(20px); transition: transform 0.5s var(--spring-physics);
+            box-shadow: var(--shadow-elevation); max-height: 88vh; overflow-y: auto; scrollbar-width: none;
         }
-        .glass-modal-overlay.show .glass-modal-content { transform: scale(1) translateY(0); opacity: 1; }
+        .glass-modal-overlay.show .glass-modal-content { transform: scale(1) translateY(0); }
+        .glass-modal-content::-webkit-scrollbar { display: none; }
 
-        /* Welcome Popup Logo Custom Animation */
-        .popup-logo {
-            width: clamp(70px, 12vw, 100px);
-            height: auto;
-            border-radius: 50%;
-            margin: 0 auto 20px auto;
-            display: block;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            border: 2px solid rgba(255,255,255,1);
-            animation: popupZoomIn 0.6s var(--spring-physics), logoGlowPulse 2.5s infinite alternate ease-in-out 0.6s;
-        }
-        @keyframes popupZoomIn {
-            0% { opacity: 0; transform: scale(0.3) translateY(20px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); }
-        }
-        @keyframes logoGlowPulse {
-            0% { filter: drop-shadow(0 5px 15px var(--glow-blue)); transform: translateY(0); }
-            100% { filter: drop-shadow(0 15px 30px var(--glow-purple)); transform: translateY(-5px); }
-        }
+        .modal-inner-card { background: rgba(148, 163, 184, 0.05); padding: 18px; border-radius: 16px; border: 1px solid var(--glass-border); margin-bottom: 16px; font-size: 0.95rem; line-height: 1.6; text-align: left; }
 
-        .input-group { margin-bottom: 20px; text-align: left; }
-        .input-group label { display: block; font-weight: 700; margin-bottom: 8px; color: var(--text-main); font-size: 0.95rem; }
-        .input-group input { width: 100%; padding: 15px 18px; border-radius: 12px; border: 2px solid #cbd5e1; background: #f8fafc; font-size: 1rem; color: var(--text-main); transition: all 0.3s ease; outline: none; font-family: inherit; font-weight: 500; }
-        .input-group input:focus { border-color: var(--c-blue); background: #ffffff; box-shadow: 0 0 0 4px var(--glow-blue); }
+        /* Referee Modal Inputs */
+        .ref-input-group { margin-bottom: 20px; text-align: left; }
+        .ref-input-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-main); font-size: 0.9rem; }
+        .ref-input-group input { width: 100%; padding: 14px 18px; border-radius: 12px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--text-main); font-size: 1rem; transition: border 0.3s; outline: none; }
+        .ref-input-group input:focus { border-color: var(--c-blue); background: rgba(255,255,255,0.1); }
 
-        .ref-msg { display: none; padding: 16px; border-radius: 12px; margin-top: 20px; font-weight: 600; font-size: 0.95rem; line-height: 1.6; animation: slideUpMsg 0.4s var(--spring-physics); }
-        @keyframes slideUpMsg { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
-        .msg-success { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; box-shadow: 0 4px 15px var(--glow-green); }
-        .msg-warning { background: #fef9c3; color: #854d0e; border: 1px solid #fde047; box-shadow: 0 4px 15px var(--glow-gold); }
-        .msg-error { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; box-shadow: 0 4px 15px rgba(225, 29, 72, 0.2); }
+        @media (prefers-reduced-motion: reduce) { *, .aurora-blob, .header-beta-badge, .header-beta-badge::after, .premium-icon { animation: none !important; transition: none !important; transform: none !important; box-shadow: none !important; text-shadow: none !important;} }
+        @media (max-width: 768px) { .footer-core-grid { text-align: center; } .info-glass-card { flex-direction: column; } }
 
-        .warning-card { border-left: 6px solid var(--c-orange); grid-column: 1 / -1; display: flex; align-items: flex-start; gap: 20px; padding: 30px; }
+        /* Footer */
+        footer { background: var(--bg-base); padding: 60px 24px 30px; border-top: 1px solid var(--glass-border); position: relative; z-index: 10; }
+        .footer-core-grid { max-width: 1200px; margin: 0 auto; display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-bottom: 40px; }
+        .footer-links a { display: block; color: var(--text-muted); text-decoration: none; margin-bottom: 12px; font-weight: 500; }
+        .footer-links a:hover { color: var(--c-blue); text-decoration: underline; }
+        .footer-contact p { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: var(--text-muted); }
+        @media (max-width: 768px) { .footer-core-grid { text-align: center; } .footer-contact p { justify-content: center; } }
 
-        /* 🏛️ Premium Enterprise Footer */
-        footer { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); padding: 70px 24px 40px; border-top: 1px solid rgba(226, 232, 240, 0.8); position: relative; z-index: 10; margin-top: 40px; box-shadow: 0 -10px 30px rgba(0,0,0,0.02); }
-        .footer-core-grid { max-width: 1200px; margin: 0 auto; display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-bottom: 50px; }
-        .footer-col h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 24px; color: var(--text-main); position: relative; display: inline-block; letter-spacing: -0.02em; }
-        .footer-col h3::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 45px; height: 3px; background: linear-gradient(90deg, var(--c-blue), var(--c-purple)); border-radius: 3px; }
-        .footer-col p, .footer-col a { color: var(--text-muted); font-size: 0.98rem; line-height: 1.8; text-decoration: none; display: block; margin-bottom: 14px; font-weight: 500; transition: color 0.3s ease; }
-        .footer-col p { display: flex; align-items: center; gap: 12px; }
-        .footer-col a:hover { color: var(--c-blue); transform: translateX(4px); display: inline-block; }
-        
-        .footer-bottom { border-top: 1px solid #e2e8f0; padding-top: 30px; text-align: center; }
-        .footer-bottom p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; }
-        .footer-bottom .dev-credit { font-weight: 800; color: var(--text-main); }
+        .goog-te-gadget { color: transparent !important; font-size: 0px !important; }
+        .goog-te-gadget .goog-te-combo { margin: 0; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--glass-border); background: var(--glass-surface); color: var(--text-main); font-family: inherit; outline: none; cursor: pointer; font-weight: 600; }
+        .goog-logo-link, .goog-te-gadget > span, .skiptranslate iframe { display: none !important; }
+        body { top: 0 !important; }
     </style>
 </head>  
 <body>  
 
-    <!-- 🚀 Phase 1: Premium Startup Loader -->
-    <div id="startup-loader">
-        <img src="assets/images/+91 70633 74492 20260715 234212.jpg" alt="ASSRA Official Logo" class="loader-logo">
-        <div class="progress-bar-bg"><div id="progress-fill" class="progress-bar-fill"></div></div>
+    <!-- 🚀 Premium Startup Loader Engine -->
+    <div id="startup-loader" role="alert" aria-busy="true" aria-label="Loading Website">
+        <div class="ambient-lighting" aria-hidden="true" style="opacity: 0.8; z-index: 1;">
+            <div class="aurora-blob blob-1"></div>
+            <div class="aurora-blob blob-2"></div>
+            <div class="aurora-blob blob-3"></div>
+        </div>
+        <div class="loader-content">
+            <img src="assets/images/+91 70633 74492 20260715 234212.jpg" alt="ASSRA Official Logo" class="official-logo-main">
+            <div class="progress-bar-bg" aria-hidden="true"><div id="progress-fill" class="progress-bar-fill"></div></div>
+            <div class="loader-text">🆕 🚧 ⚠️ Beta Version 12 Premium Upgrade</div>
+        </div>
     </div>
     
-    <!-- Phase 2: Premium Aurora Lighting -->
-    <div class="ambient-lighting">
+    <!-- Ambient Base -->
+    <div class="ambient-lighting" aria-hidden="true">
         <div class="aurora-blob blob-1"></div>
         <div class="aurora-blob blob-2"></div>
         <div class="aurora-blob blob-3"></div>
-    </div> 
+    </div>
 
-    <!-- Header Section (Banner & Official Logo Integration) -->
-    <header>  
-        <img src="assets/images/banner.jpg" alt="ASSRA Official Banner" onerror="this.src='fallback_banner.jpg'" class="hero-banner">
-        <img src="assets/images/+91 70633 74492 20260715 234212.jpg" alt="ASSRA Official Logo" class="official-logo">
-        <h1 class="premium-gradient-text">ASSRA OFFICIAL PORTAL</h1>  
-        <div><span class="header-beta-badge">🆕 🚧 ⚠️ Beta Version 12 Premium Upgrade</span></div>
+    <!-- Top Bar -->
+    <div class="top-bar">  
+        <div class="gtranslate_wrapper"></div>
+        <div class="top-bar-controls">
+            <button class="icon-btn" id="themeToggleBtn" aria-label="Toggle Dark/Light Theme">
+                <span class="material-icons-round" id="themeIcon" aria-hidden="true">dark_mode</span>
+            </button>
+        </div>
+    </div>  
+
+    <header role="banner">  
+        <img src="assets/images/banner.jpg" alt="ASSRA Official Banner" onerror="this.src='fallback_banner.jpg'" class="hero-banner" fetchpriority="high" decoding="async">
+        <!-- Text Removed as requested, Badge remains -->
+        <div><span class="header-beta-badge" aria-label="Beta Version 12">🆕 🚧 ⚠️ Beta Version 12 Premium Upgrade</span></div>
     </header>  
 
-    <main class="main-grid-container">  
-          
-        <!-- 1. Membership Card (Blue Glow) -->
-        <div class="premium-card card-blue">  
+    <main id="main-content" class="main-grid-container" role="main">  
+        
+        <div class="info-glass-card" role="note" aria-label="System Guidelines">
+            <span class="material-icons-round premium-icon icon-help notranslate" translate="no" aria-hidden="true" style="color: var(--c-blue);">phonelink_setup</span>
             <div>
-                <div class="card-header"><span class="material-icons-round">person_add_alt_1</span><h2>সদস্যপদ আবেদন</h2></div>  
+                <h2 style="color: var(--text-main); font-weight: 700; margin-bottom: 6px; font-size: 1.3rem;">সিস্টেম নির্দেশিকা</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">মোবাইল ডিভাইসে সর্বোত্তম এক্সপেরিয়েন্সের জন্য ব্রাউজারের <strong>Desktop Site</strong> মুডটি সক্রিয় করার পরামর্শ দেওয়া হচ্ছে।</p>
+            </div>
+        </div>
+          
+        <div class="premium-card">  
+            <div>
+                <div class="card-header"><span class="material-icons-round premium-icon icon-membership notranslate" translate="no" aria-hidden="true">person_add_alt_1</span><h2>সদস্যপদ আবেদন</h2></div>  
                 <p>অ্যাসোসিয়েশনের নতুন মেম্বারশিপ বা অফিসিয়াল সদস্য পদের জন্য ডেডিকেটেড পোর্টাল ফর্ম পূরণ করুন।</p>  
             </div>
-            <button onclick="window.open('https://forms.gle/JZRYHVyoqFffUX7B8', '_blank')" class="btn-action bg-blue">আবেদন করুন</button>  
+            <button aria-label="অনলাইন মেম্বারশিপ ফর্ম ওপেন করুন" onclick="triggerSmartLoader('Loading Membership Portal...', 'https://forms.gle/JZRYHVyoqFffUX7B8', 'assignment', 'var(--c-blue)')" class="btn-action bg-blue">আবেদন করুন</button>  
         </div>  
 
-        <!-- 2. IFAB Card (Gold Glow) -->
-        <div class="premium-card card-gold">  
-            <div class="gold-badge">Official</div>
+        <div class="premium-card card-vip">  
+            <div class="vip-tag" aria-label="Official Document">OFFICIAL</div>
             <div>
-                <div class="card-header"><span class="material-icons-round">menu_book</span><h2>লজ অফ দ্য গেম (IFAB)</h2></div>  
+                <div class="card-header"><span class="material-icons-round premium-icon icon-ifab notranslate" translate="no" aria-hidden="true">menu_book</span><h2>লজ অফ দ্য গেম (IFAB)</h2></div>  
                 <p>ফুটবলের আন্তর্জাতিক নিয়মনীতি সম্বলিত লেটেস্ট IFAB Laws of the Game ২০২৬/২৭-এর অফিসিয়াল নির্দেশিকা।</p>  
             </div>
             <div>
-                <button onclick="window.open('https://drive.google.com/file/d/195McUzbnNvqW2E0bS1SoILdnAiKdug_-/view?usp=drivesdk', '_blank')" class="btn-action bg-gold"><span class="material-icons-round">description</span> PDF ১: পরিবর্তনসমূহ</button>
-                <button onclick="window.open('https://drive.google.com/file/d/1q3Cd94ssiO-NirxeaR2rQ31Oh_jg-rx7/view?usp=drivesdk', '_blank')" class="btn-action bg-gold" style="margin-bottom:0;"><span class="material-icons-round">library_books</span> PDF ২: সম্পূর্ণ নিয়ম</button>
+                <button aria-label="আইএফএবি পার্ট ১ পিডিএফ ডাউনলোড" onclick="triggerSmartLoader('Opening Official IFAB Documents...', 'https://drive.google.com/file/d/195McUzbnNvqW2E0bS1SoILdnAiKdug_-/view?usp=drivesdk', 'description', 'var(--c-emerald)')" class="btn-action bg-emerald"><span class="material-icons-round notranslate" translate="no" aria-hidden="true">description</span> PDF ১: পরিবর্তনসমূহ</button>
+                <button aria-label="আইএফএবি সম্পূর্ণ রুলবুক পিডিএফ ডাউনলোড" onclick="triggerSmartLoader('Opening Official IFAB Documents...', 'https://drive.google.com/file/d/1q3Cd94ssiO-NirxeaR2rQ31Oh_jg-rx7/view?usp=drivesdk', 'library_books', 'var(--c-emerald)')" class="btn-action bg-emerald" style="margin-bottom:0;"><span class="material-icons-round notranslate" translate="no" aria-hidden="true">library_books</span> PDF ২: সম্পূর্ণ নিয়ম</button>
             </div>
         </div>  
 
-        <!-- 3. Registered Referee Card (Green Glow) -->
-        <div class="premium-card card-green">  
+        <div class="premium-card">  
             <div>
-                <div class="card-header"><span class="material-icons-round">security</span><h2>নিবন্ধিত রেফারি তথ্য</h2></div>  
-                <p>⚠️ নিরাপত্তা ও গোপনীয়তার স্বার্থে রেফারিদের ব্যক্তিগত তথ্য শুধুমাত্র ASSRA-এর অনুমোদিত কর্মকর্তাদের জন্য সংরক্ষিত।</p>  
+                <div class="card-header"><span class="material-icons-round premium-icon icon-referee notranslate" translate="no" aria-hidden="true">sports</span><h2>অফিসিয়াল রেফারি তথ্য</h2></div>  
+                <p>আরামবাগ সাবডিভিশনের রেজিস্টার্ড এবং সার্টিফাইড ফুটবল রেফারিদের প্রোফাইল ও তালিকা সূচি।</p>  
             </div>
-            <button onclick="openRefereePopup()" class="btn-action bg-green"><span class="material-icons-round">lock</span> 🔒 Secure Access</button>  
+            <button aria-label="রেজিস্টার্ড রেফারি প্যানেল তালিকা ভিউ করুন" onclick="openRefereeModal(event)" class="btn-action bg-cyan">তালিকা দেখুন</button>  
         </div>  
 
-        <!-- 4. Notice Board (Purple Glow) -->
-        <div class="premium-card card-purple">  
+        <div class="premium-card">  
             <div>
-                <div class="card-header"><span class="material-icons-round">campaign</span><h2>নোটিশ বোর্ড</h2></div>  
+                <div class="card-header"><span class="material-icons-round premium-icon icon-notice notranslate" translate="no" aria-hidden="true">campaign</span><h2>নোটিশ বোর্ড</h2></div>  
                 <p>অ্যাসোসিয়েশনের সাম্প্রতিক সিদ্ধান্ত, ম্যাচ শিডিউল, এবং কার্যনির্বাহী কমিটির নোটিফিকেশন।</p>  
             </div>
-            <div id="notice-list">
-                <div class="skeleton-loader" style="margin-bottom: 12px;"></div>
-                <div class="skeleton-loader"></div>
+            <div id="notice-list" aria-live="polite" aria-busy="true">
+                <div class="skeleton-loader" style="margin-bottom: 12px;" aria-hidden="true"></div>
+                <div class="skeleton-loader" aria-hidden="true"></div>
             </div>  
         </div>  
 
-        <!-- 5. Social Media (Blue Glow) -->
-        <div class="premium-card card-blue">
+        <div class="premium-card">
             <div>
-                <div class="card-header"><span class="material-icons-round">public</span><h2>Official Social Media</h2></div>
+                <div class="card-header"><span class="material-icons-round premium-icon icon-social notranslate" translate="no" aria-hidden="true">public</span><h2>Official Social Media</h2></div>
                 <p>অ্যাসোসিয়েশনের ভেরিফাইড এবং একমাত্র অফিশিয়াল সোশ্যাল নেটওয়ার্ক কমিউনিটি চ্যানেল।</p>
             </div>
             <div>
-                <a href="https://www.facebook.com/share/1E8ACWBMDz/" target="_blank" class="btn-action bg-social">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#3b5998"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <a aria-label="ASSRA অফিশিয়াল ফেসবুক পেজ ভিজিট করুন" href="javascript:void(0)" onclick="triggerSmartLoader('Connecting Official Facebook...', 'https://www.facebook.com/share/1E8ACWBMDz/', 'facebook', '#1877f2')" class="btn-action bg-fb">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     Facebook Channel
                 </a>
-                <a href="https://www.instagram.com/a.s.r.s.c?igsh=dmlibngwMmwxenU3" target="_blank" class="btn-action bg-social" style="margin-bottom:0;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#d946ef"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                <a aria-label="ASSRA অফিশিয়াল ইনস্টাগ্রাম প্রোফাইল ফলো করুন" href="javascript:void(0)" onclick="triggerSmartLoader('Opening Official Instagram...', 'https://www.instagram.com/a.s.r.s.c?igsh=dmlibngwMmwxenU3', 'camera_alt', '#d946ef')" class="btn-action bg-insta">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                     Instagram Feed
                 </a>
             </div>
         </div>
 
-        <!-- 6. Help & Support (Green Glow) -->
-        <div class="premium-card card-green">  
+        <div class="premium-card">  
             <div>
-                <div class="card-header"><span class="material-icons-round">support_agent</span><h2>হেল্প এন্ড সাপোর্ট</h2></div>  
+                <div class="card-header"><span class="material-icons-round premium-icon icon-help notranslate" translate="no" aria-hidden="true">support_agent</span><h2>হেল্প এন্ড সাপোর্ট</h2></div>  
                 <p>প্রযুক্তিগত সমস্যা, ডেটা ভেরিফিকেশন অথবা অ্যাসোসিয়েশন সংক্রান্ত যেকোনো জিজ্ঞাসায় হেল্পডেস্ক।</p>  
             </div>
             <div>
-                <a href="https://wa.me/917063374492" target="_blank" class="btn-action bg-whatsapp">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <a aria-label="অফিসিয়াল হোয়াটসঅ্যাপ হেল্পডেস্কে মেসেজ করুন" href="javascript:void(0)" onclick="triggerSmartLoader('Connecting to ASSRA WhatsApp Support...<br><br><span style=\'font-size:0.9rem;font-weight:400;opacity:0.8\'>আপনাকে ASSRA-এর অফিসিয়াল WhatsApp Support-এর সাথে নিরাপদভাবে সংযুক্ত করা হচ্ছে।<br>বর্তমানে এই সাপোর্ট পরিষেবাটি পরিচালনা করছেন<br><strong style=\'color:#38bdf8\'>Mr. Swastik Halder</strong><br>(Member & Developer)</span>', 'https://wa.me/917063374492', 'chat', '#22c55e')" class="btn-action bg-whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                     WhatsApp Support
                 </a>
-                <a href="mailto:arambaghsub.sports.refereess@gmail.com" class="btn-action bg-email" style="margin-bottom:0;"><span class="material-icons-round">email</span> Email Support</a>
+                <a aria-label="অফিসিয়াল ইমেইল ইনবক্সে মেইল পাঠান" href="javascript:void(0)" onclick="triggerSmartLoader('Opening Official Email Service...', 'mailto:arambaghsub.sports.refereess@gmail.com', 'email', 'var(--c-rose)')" class="btn-action bg-rose"><span class="material-icons-round notranslate" translate="no" aria-hidden="true">email</span> Email Support</a>
             </div>
         </div>  
 
-        <!-- 7. Warning Section (Orange Glow) -->
-        <div class="premium-card warning-card card-orange">  
-            <span class="material-icons-round" style="font-size: 45px; color: var(--c-orange);">warning_amber</span>  
-            <div>  
-                <h2 style="font-weight: 800; margin-bottom: 10px; font-size: 1.4rem; color: var(--text-main);">গুরুত্বপূর্ণ সতর্কবার্তা</h2>  
-                <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 0;">অ্যাসোসিয়েশনের সকল সিকিউরড নোটিশ শুধুমাত্র এই পোর্টাল ও অফিশিয়াল সোশ্যালে প্রকাশ করা হয়। কোনো আনঅথরাইজড গ্রুপ বা ব্যক্তির আর্থিক লেনদেনের দাবি এড়িয়ে চলুন।</p>
+        <div class="info-glass-card" style="border-left-color: var(--c-orange);" role="alert" aria-live="assertive">  
+            <span class="material-icons-round premium-icon icon-warning notranslate" translate="no" aria-hidden="true" style="color: var(--c-orange);">warning_amber</span>  
+            <div style="width: 100%;">  
+                <h2 style="color: var(--text-main); font-weight: 700; margin-bottom: 8px; font-size: 1.3rem;">গুরুত্বপূর্ণ সতর্কবার্তা</h2>  
+                <p style="color: var(--text-muted); font-size: 0.95rem;">অ্যাসোসিয়েশনের সকল সিকিউরড নোটিশ শুধুমাত্র এই পোর্টাল ও অফিশিয়াল সোশ্যালে প্রকাশ করা হয়। কোনো আনঅথরাইজড গ্রুপ বা ব্যক্তির আর্থিক লেনদেনের দাবি এড়িয়ে চলুন।</p>
             </div>  
         </div>  
 
     </main>  
 
-    <!-- 🏛️ Footer -->
-    <footer>  
-        <div class="footer-core-grid">
-            <div class="footer-col">
-                <h3>About ASSRA</h3>
-                <p style="text-align: justify; padding-right: 15px;">আরামবাগ সাবডিভিশনাল স্পোর্টস এন্ড রেফারি অ্যাসোসিয়েশনের একমাত্র অফিশিয়াল ডিজিটাল পোর্টাল। রেফারিদের পেশাদারিত্ব এবং ক্রীড়া আইনের সঠিক প্রয়োগে আমরা বদ্ধপরিকর।</p>
+    <footer role="contentinfo" style="background: var(--bg-base); padding: 60px 24px 30px; border-top: 1px solid var(--glass-border);">  
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-bottom: 40px;">
+            <div>
+                <h2 style="font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;">ASSRA Official</h2>
+                <p style="line-height: 1.8; font-size: 0.95rem;">আরামবাগ সাবডিভিশনাল স্পোর্টস এন্ড রেফারি অ্যাসোসিয়েশনের একমাত্র অফিশিয়াল এন্টারপ্রাইজ সিস্টেম। রেফারিদের পেশাদারিত্ব এবং ক্রীড়া আইনের সঠিক প্রয়োগে আমরা বদ্ধপরিকর।</p>
             </div>
-            <div class="footer-col">
-                <h3>Contact Information</h3>
-                <p><span class="material-icons-round" style="color: var(--c-blue);">location_on</span> Arambagh, Hooghly, WB</p>
-                <p><span class="material-icons-round" style="color: var(--c-blue);">email</span> arambaghsub.sports.refereess@gmail.com</p>
-                <p><span class="material-icons-round" style="color: var(--c-blue);">phone</span> +91 70633 74492</p>
-            </div>
-            <div class="footer-col">
-                <h3>Official Website</h3>
-                <a href="#">Governance</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Use</a>
-                <div style="margin-top: 25px; font-weight: 700; color: var(--c-green); background: rgba(16,185,129,0.1); padding: 10px 18px; border-radius: 8px; display: inline-block; border: 1px solid rgba(16,185,129,0.3);">
-                    🆕 🚧 ⚠️ Beta Version 12
-                </div>
-            </div>
+            <nav class="footer-links" aria-label="Footer Navigation">
+                <h3 style="font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">পাবলিক ডিরেক্টরি</h3>
+                <a href="#">অ্যাসোসিয়েশন গভর্ন্যান্স</a>
+                <a href="#">প্রাইভেসি পলিসি</a>
+                <a href="#">ব্যবহারের শর্তাবলী</a>
+            </nav>
+            <address class="footer-contact" style="font-style: normal;">
+                <h3 style="font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">রিয়েলটাইম নোটিশ</h3>
+                <p style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;"><span class="material-icons-round notranslate" translate="no" aria-hidden="true" style="color: var(--c-cyan);">location_on</span> Arambagh, Hooghly, WB</p>
+                <p style="display: flex; align-items: center; gap: 10px;"><span class="material-icons-round notranslate" translate="no" aria-hidden="true" style="color: var(--c-cyan);">email</span> arambaghsub.sports.refereess@gmail.com</p>
+            </address>
         </div>
-        <div class="footer-bottom">
-            <p style="color: var(--c-green); font-weight: 800; margin-bottom: 12px; font-size: 1.05rem;">Official Website • 🆕 🚧 ⚠️ Beta Version 12 Premium Upgrade</p>
-            <p>© 2026–Present ASSRA. All Rights Reserved.</p>
-            <p>Designed & Developed by <span class="dev-credit">Swastik Halder</span></p>
+        <div style="border-top: 1px solid var(--glass-border); padding-top: 20px; text-align: center;">
+            <p style="font-size: 1rem; font-weight: 700; margin-bottom: 5px;">Official Website • 🆕 🚧 ⚠️ Beta Version 12 Premium Upgrade</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">© 2026–Present ASSRA. All Rights Reserved. Designed & Developed by <strong>Swastik Halder</strong></p>
         </div>
     </footer>  
 
-    <!-- 👋 Welcome Popup & Logo Integration -->
-    <div id="welcomeModal" class="glass-modal-overlay">
+    <!-- Welcome PopUp (With Official Logo and Developer Credit) -->
+    <div id="welcomeModal" class="glass-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
         <div class="glass-modal-content">
-            <img src="assets/images/+91 70633 74492 20260715 234212.jpg" alt="ASSRA Welcome Logo" class="popup-logo">
-            <h2 style="font-size: 1.9rem; font-weight: 800; margin-bottom: 22px; color: var(--c-blue);">👋 Welcome to ASSRA Official Portal</h2>
+            <img src="assets/images/+91 70633 74492 20260715 234212.jpg" alt="ASSRA Official Logo" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 15px auto; display: block; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
             
-            <div style="background: rgba(16, 185, 129, 0.1); padding: 16px; border-radius: 14px; border: 1px solid rgba(16, 185, 129, 0.4); color: var(--c-green); margin-bottom: 25px; font-weight: 800; font-size: 1.05rem;">
-                🆕 🚧 ⚠️ Beta Version 12 Premium Upgrade
+            <h2 id="welcome-title" style="font-size: 1.6rem; font-weight: 700; margin-bottom: 10px;">👋 Welcome to ASSRA Portal</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">অফিসিয়াল এন্টারপ্রাইজ সিস্টেমে আপনাকে আন্তরিক স্বাগতম।</p>
+            
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border); margin-bottom: 15px; font-size: 0.95rem; text-align: left;">
+                এই ডিজিটাল প্ল্যাটফর্মটি অ্যাসোসিয়েশনের সম্মানিত সদস্য, নিবন্ধিত রেফারি, ফুটবলার এবং ক্রীড়ামোদী দর্শনার্থীদের জন্য রিয়েল-টাইম অফিশিয়াল নোটিশ ও লজিস্টিক সেবা সরবরাহের লক্ষ্যে তৈরি।
             </div>
 
-            <p style="font-size: 1rem; line-height: 1.7; margin-bottom: 30px; color: var(--text-muted); font-weight: 500;">
-                এই ওয়েবসাইটটি নিয়মিত উন্নয়ন, কর্মক্ষমতা বৃদ্ধি এবং ব্যবহারকারীর অভিজ্ঞতা আরও উন্নত করার লক্ষ্যে ধারাবাহিকভাবে আপডেট করা হচ্ছে।
-            </p>
+            <div style="background: rgba(16, 185, 129, 0.1); padding: 15px; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.3); color: var(--c-emerald); margin-bottom: 20px; font-weight: 700;">
+                🆕 🚧 ⚠️ Beta Version 12 Premium Upgrade<br>
+                <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-main);">Stable CSS Architecture • Core Web Vitals Optimized</span>
+            </div>
             
-            <div style="margin-bottom: 30px; font-size: 1rem; color: var(--text-main);">
+            <!-- Developer Credit Added -->
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
                 Designed & Developed by<br>
-                <strong style="font-size: 1.25rem; background: linear-gradient(135deg, var(--c-blue), var(--c-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Swastik Halder</strong>
+                <strong style="color: var(--c-cyan);">Mr. Swastik Halder</strong><br>
+                <span style="font-size: 0.8rem;">(Member & Developer)</span>
+            </p>
+
+            <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">
+                <div id="welcomeAutoCloseInfo" style="color: var(--c-orange);" aria-live="polite">⏳ বার্তাটি ১২ সেকেন্ড পরে স্বয়ংক্রিয়ভাবে বন্ধ হয়ে যাবে।</div>
+                <div id="welcomeSkipInfo" style="color: var(--c-purple); margin-top: 6px;" aria-live="polite">⏭️ Skip Button ৭ সেকেন্ড পরে প্রদর্শিত হবে।</div>
             </div>
 
-            <div style="color: var(--c-orange); font-weight: 700; font-size: 0.95rem; background: rgba(234, 88, 12, 0.1); padding: 10px; border-radius: 8px; display: inline-block;" id="welcomeAutoCloseText">
-                Auto Close : 12 Seconds
-            </div>
+            <button aria-label="পপআপ ক্লোজ করুন" id="welcomeSkipBtn" onclick="closeWelcomePopup()" class="btn-action bg-slate" style="display: none; border-radius: 100px; padding: 12px 32px; width: auto; margin: 24px auto 0;">
+                <span class="material-icons-round notranslate" translate="no" aria-hidden="true">skip_next</span> Skip / বন্ধ করুন
+            </button>
         </div>
     </div>
 
-    <!-- 🔒 Referee Secure Access Modal (Demo) -->
-    <div id="refereeModal" class="glass-modal-overlay">
-        <div class="glass-modal-content">
-            <!-- Screen 1 -->
-            <div id="refScreen1">
-                <span class="material-icons-round" style="font-size: 65px; color: var(--c-rose); margin-bottom: 12px; filter: drop-shadow(0 4px 10px rgba(225,29,72,0.3));">gpp_bad</span>
-                <h2 style="font-size: 1.7rem; font-weight: 800; margin-bottom: 18px;">Restricted Secure Access</h2>
-                <div style="background: #fee2e2; border: 1px solid #fecaca; padding: 18px; border-radius: 14px; margin-bottom: 25px; text-align: left; color: #991b1b;">
-                    ⚠️ <strong>এই অংশটি শুধুমাত্র ASSRA-এর অনুমোদিত কর্মকর্তাদের জন্য সংরক্ষিত।</strong>
-                </div>
-                
-                <label style="display: flex; align-items: center; gap: 12px; font-weight: 600; cursor: pointer; text-align: left; margin-bottom: 35px; background: #f8fafc; padding: 18px; border-radius: 12px; border: 2px solid #e2e8f0; transition: border 0.3s ease;">
-                    <input type="checkbox" id="refAuthCheck" style="width: 22px; height: 22px; accent-color: var(--c-blue);">
-                    আমি নিশ্চিত করছি যে আমি ASSRA-এর অনুমোদিত কর্মকর্তা।
-                </label>
+    <!-- Individual Smart Loading Screen Engine -->
+    <div id="smartLoaderModal" class="glass-modal-overlay" role="dialog" aria-labelledby="smart-loading-title">
+        <div class="glass-modal-content" style="max-width: 380px; padding: 40px 20px;">
+            <span id="smartLoaderIcon" class="material-icons-round spinner-icon notranslate" translate="no" aria-hidden="true" style="font-size: 55px; color: var(--c-blue);">hourglass_empty</span>
+            <h2 id="smartLoaderText" style="margin-top: 25px; font-size: 1.15rem; line-height: 1.5;">Loading...</h2>
+        </div>
+    </div>
 
-                <div style="display: flex; gap: 16px;">
-                    <button onclick="closeModal('refereeModal')" class="btn-action bg-social" style="flex: 1;">Cancel</button>
-                    <button onclick="goRefereeScreen2()" class="btn-action bg-blue" style="flex: 1;">Continue</button>
+    <!-- Referee Modal (Updated: Empty Inputs & New Message) -->
+    <div id="refereeModal" class="glass-modal-overlay" role="dialog" aria-labelledby="referee-title">
+        <div class="glass-modal-content">
+            <span class="material-icons-round notranslate" translate="no" aria-hidden="true" style="font-size: 55px; color: var(--c-purple); margin-bottom: 15px;">admin_panel_settings</span>
+            <h2 id="referee-title" style="margin-bottom: 25px; font-size: 1.4rem;">Official Member Login</h2>
+            
+            <div id="refInputsArea">
+                <div class="ref-input-group">
+                    <label>Official Member Name</label>
+                    <input type="text" id="refName" placeholder="Enter Official Name" value="">
                 </div>
+                <div class="ref-input-group">
+                    <label>Security Password</label>
+                    <input type="password" id="refPass" placeholder="Enter Password" value="">
+                </div>
+                <button onclick="verifyRefereeLogin()" class="btn-action bg-purple" style="margin-top: 10px;">Verify Identity</button>
+                <button onclick="closeRefereeModal()" class="btn-action bg-slate" style="margin-top: 10px;">Cancel</button>
             </div>
 
-            <!-- Screen 2 -->
-            <div id="refScreen2" style="display: none;">
-                <span class="material-icons-round" style="font-size: 60px; color: var(--c-blue); margin-bottom: 12px; filter: drop-shadow(0 4px 10px var(--glow-blue));">admin_panel_settings</span>
-                <h2 style="font-size: 1.7rem; font-weight: 800; margin-bottom: 30px;">Official Member Verification</h2>
-                
-                <div class="input-group">
-                    <label>Official Member Name</label>
-                    <input type="text" id="refName" value="Swastik Halder" placeholder="Enter full name">
+            <div id="refRestrictedState" style="display: none; text-align: left;">
+                <!-- Updated Database Message -->
+                <h3 style="color: var(--c-orange); margin-bottom: 16px; font-weight: 800; font-size: 1.2rem; text-align: center;">বর্তমানে তথ্য উপলব্ধ নয়।</h3>
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 12px; border-left: 4px solid var(--c-orange); margin-bottom: 20px;">
+                    <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted);">
+                        রেফারিদের তথ্যের ডিজিটাল ডেটাবেস বর্তমানে প্রস্তুত ও আপলোডের পর্যায়ে রয়েছে।<br><br>
+                        এই কাজ বর্তমানে ASSRA কমিটির পর্যবেক্ষণে রয়েছে। তথ্য যাচাই ও হস্তান্তর প্রক্রিয়া সম্পন্ন হলে তা <strong>Mr. Swastik Halder (Member & Developer)</strong>-এর নিকট প্রদান করা হবে। পরবর্তীতে ডেটাবেসটি অফিসিয়াল ওয়েবসাইটে আপলোড করা হবে।<br><br>
+                        আশা করা হচ্ছে ২৪ তারিখের মধ্যে এই সুবিধাটি চালু করা সম্ভব হবে। সর্বশেষ তথ্যের জন্য Help & Support অথবা ASSRA অফিসে যোগাযোগ করুন।
+                    </p>
                 </div>
-                
-                <div class="input-group">
-                    <label>Security Password</label>
-                    <input type="password" id="refPass" value="Assra@123" placeholder="Enter password">
-                </div>
-
-                <button onclick="verifyRefereeLogin()" class="btn-action bg-blue">Verify Identity</button>
-                
-                <div id="refResultBox" class="ref-msg"></div>
-
-                <div id="refSupportAction" style="display: none; margin-top: 25px;">
-                    <a href="https://wa.me/917063374492" target="_blank" class="btn-action bg-whatsapp">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        WhatsApp Support
-                    </a>
-                    <button onclick="closeModal('refereeModal')" class="btn-action bg-social" style="margin-top: 12px;">Close Window</button>
+                <div style="display: flex; gap: 10px;">
+                    <a href="https://wa.me/917063374492" target="_blank" rel="noopener noreferrer" class="btn-action bg-whatsapp" style="flex: 1; font-size: 0.9rem;">WhatsApp Support</a>
+                    <button onclick="closeRefereeModal()" class="btn-action bg-slate" style="flex: 1; font-size: 0.9rem;">ফিরে যান</button>
                 </div>
             </div>
         </div>
@@ -529,129 +504,197 @@
 
     <!-- ================= ENTERPRISE SCRIPT ENGINE ================= -->
     <script>  
-        // 🚀 Engine Logic Remains Completely Unchanged
+        // 🚀 TRUE ASSET-BASED STARTUP LOADER ENGINE
         const progressFill = document.getElementById('progress-fill');
         const startupLoader = document.getElementById('startup-loader');
         let currentProgress = 0;
-        let targetProgress = 10;
+        let targetProgress = 0;
 
         function renderProgress() {
             if (currentProgress < targetProgress) {
-                currentProgress += (targetProgress - currentProgress) * 0.1;
-                if (targetProgress - currentProgress < 0.5) currentProgress = targetProgress;
+                currentProgress += (targetProgress - currentProgress) * 0.1; 
+                if (targetProgress - currentProgress < 0.1) currentProgress = targetProgress;
                 if (progressFill) progressFill.style.width = `${currentProgress}%`;
             }
             if (currentProgress < 100) { requestAnimationFrame(renderProgress); } 
-            else { finishLoading(); }
+            else { if (progressFill) progressFill.style.width = `100%`; finishLoading(); }
         }
         requestAnimationFrame(renderProgress);
+        function updateProgress(val) { if (val > targetProgress) targetProgress = val; }
 
+        updateProgress(10); 
         document.addEventListener('readystatechange', () => {
-            if (document.readyState === 'interactive') targetProgress = 50;
-            if (document.readyState === 'complete') targetProgress = 85;
+            if (document.readyState === 'interactive') updateProgress(40);
+            if (document.readyState === 'complete') updateProgress(70);
         });
+        if (document.fonts) { document.fonts.ready.then(() => updateProgress(85)); }
+        
+        const heroBanner = document.querySelector('.hero-banner');
+        if(heroBanner) {
+            if(heroBanner.complete) updateProgress(95);
+            else heroBanner.addEventListener('load', () => updateProgress(95));
+        }
 
-        window.addEventListener('load', () => { targetProgress = 100; });
-        setTimeout(() => { targetProgress = 100; }, 7000); 
+        window.addEventListener('load', () => { updateProgress(100); });
+        setTimeout(() => { updateProgress(100); }, 10000); // Fail-safe
 
         function finishLoading() {
             setTimeout(() => {
-                startupLoader.classList.add('loader-hiding');
-                setTimeout(() => {
-                    startupLoader.style.display = 'none';
-                    triggerWelcomePopup();
-                }, 800);
-            }, 500);
+                if(startupLoader) {
+                    startupLoader.classList.add('loader-hiding');
+                    setTimeout(() => {
+                        startupLoader.style.display = 'none';
+                        checkAndTriggerWelcomePopup();
+                    }, 800);
+                }
+            }, 400); 
         }
 
-        function openModal(id) {
-            const modal = document.getElementById(id);
-            modal.style.display = 'flex';
-            setTimeout(() => modal.classList.add('show'), 10);
-            document.body.classList.add('modal-open');
+        // 🌓 Theme Configuration System
+        const themeBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlTag = document.documentElement;
+
+        const savedTheme = localStorage.getItem('assra_theme') || 'auto';
+        applyTheme(savedTheme);
+
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = htmlTag.getAttribute('data-theme');
+            let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            if(currentTheme === 'auto') newTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+
+        function applyTheme(theme) {
+            htmlTag.setAttribute('data-theme', theme);
+            localStorage.setItem('assra_theme', theme);
+            themeIcon.innerText = theme === 'light' ? 'light_mode' : 'dark_mode';
+            document.getElementById('meta-theme-color').setAttribute("content", theme === 'light' ? '#f8fafc' : '#020617');
         }
-        function closeModal(id) {
-            const modal = document.getElementById(id);
-            modal.classList.remove('show');
+
+        // 👆 Core Touch Feedback (Ripple & Pulse)
+        document.querySelectorAll('.btn-action').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                let box = this.getBoundingClientRect();
+                let ripple = document.createElement('span');
+                ripple.className = 'ripple';
+                ripple.style.left = `${e.clientX - box.left}px`;
+                ripple.style.top = `${e.clientY - box.top}px`;
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // 🪟 General Modal Dispatcher
+        function openPortalWindow(targetId, open) {
+            const node = document.getElementById(targetId);
+            if(open) {
+                node.style.display = 'flex';
+                setTimeout(() => node.classList.add('show'), 15);
+                document.body.classList.add('modal-open');
+                const closeBtn = node.querySelector('button');
+                if(closeBtn) setTimeout(() => closeBtn.focus(), 50);
+            } else {
+                node.classList.remove('show');
+                node.classList.add('hiding');
+                setTimeout(() => {
+                    node.style.display = 'none';
+                    node.classList.remove('hiding');
+                    document.body.classList.remove('modal-open');
+                }, 400); 
+            }
+        }
+
+        // 🚀 SMART LOADER CONTROLLER (Individual Action Loader)
+        function triggerSmartLoader(message, destination, iconName, color) {
+            const loaderIcon = document.getElementById('smartLoaderIcon');
+            const loaderText = document.getElementById('smartLoaderText');
+            
+            loaderIcon.innerText = iconName;
+            loaderIcon.style.color = color;
+            loaderText.innerHTML = message;
+            
+            openPortalWindow('smartLoaderModal', true);
+            
             setTimeout(() => {
-                modal.style.display = 'none';
-                document.body.classList.remove('modal-open');
-            }, 500);
+                openPortalWindow('smartLoaderModal', false);
+                if(destination) window.open(destination, '_blank', 'noopener,noreferrer');
+            }, 1200); // Wait 1.2s before redirecting
+        }
+
+        // ⏱️ Welcome Popup Logic
+        let welcomeIntervalTimer;
+        
+        function checkAndTriggerWelcomePopup() {
+            const timestamp = localStorage.getItem('assra_popup_closed_time');
+            const sessionActive = sessionStorage.getItem('assra_popup_closed_session');
+
+            if (!sessionActive || (timestamp && (Date.now() - parseInt(timestamp) > 300000))) {
+                setTimeout(triggerWelcomePopup, 500); 
+            }
         }
 
         function triggerWelcomePopup() {
-            if(!sessionStorage.getItem('welcomeShown')) {
-                openModal('welcomeModal');
-                let count = 12;
-                const timerText = document.getElementById('welcomeAutoCloseText');
+            openPortalWindow('welcomeModal', true);
+            let skipTimer = 7; 
+            let duration = 12; 
+            
+            const skipRef = document.getElementById('welcomeSkipInfo');
+            const autoRef = document.getElementById('welcomeAutoCloseInfo');
+            const btn = document.getElementById('welcomeSkipBtn');
+
+            welcomeIntervalTimer = setInterval(() => {
+                duration--;
+                skipTimer--;
                 
-                const interval = setInterval(() => {
-                    count--;
-                    timerText.innerText = `Auto Close : ${count} Seconds`;
-                    if(count <= 0) {
-                        clearInterval(interval);
-                        closeModal('welcomeModal');
-                        sessionStorage.setItem('welcomeShown', 'true');
-                    }
-                }, 1000);
-            }
+                if (skipTimer > 0) {
+                    skipRef.innerHTML = `⏭️ Skip Button ${skipTimer} সেকেন্ড পরে প্রদর্শিত হবে।`;
+                } else if (skipTimer === 0) {
+                    skipRef.style.display = 'none';
+                    btn.style.display = 'inline-flex';
+                }
+                
+                if (duration > 0) {
+                    autoRef.innerHTML = `⏳ বার্তাটি ${duration} সেকেন্ড পরে স্বয়ংক্রিয়ভাবে বন্ধ হয়ে যাবে।`;
+                } else {
+                    closeWelcomePopup();
+                }
+            }, 1000);
         }
 
-        function openRefereePopup() {
-            document.getElementById('refScreen1').style.display = 'block';
-            document.getElementById('refScreen2').style.display = 'none';
-            document.getElementById('refAuthCheck').checked = false;
-            document.getElementById('refResultBox').style.display = 'none';
-            document.getElementById('refSupportAction').style.display = 'none';
-            openModal('refereeModal');
+        function closeWelcomePopup() {
+            clearInterval(welcomeIntervalTimer);
+            openPortalWindow('welcomeModal', false);
+            sessionStorage.setItem('assra_popup_closed_session', 'true');
+            localStorage.setItem('assra_popup_closed_time', Date.now().toString());
         }
 
-        function goRefereeScreen2() {
-            const checkbox = document.getElementById('refAuthCheck');
-            if(checkbox.checked) {
-                document.getElementById('refScreen1').style.display = 'none';
-                document.getElementById('refScreen2').style.display = 'block';
-            } else {
-                checkbox.parentElement.style.borderColor = 'var(--c-rose)';
-                setTimeout(() => { checkbox.parentElement.style.borderColor = '#e2e8f0'; }, 800);
-            }
+        // 🔒 Referee Logic (Updated)
+        function openRefereeModal(event) {
+            event.preventDefault();
+            document.getElementById('refInputsArea').style.display = 'block';
+            document.getElementById('refRestrictedState').style.display = 'none';
+            document.getElementById('refName').value = ''; // Ensure Empty
+            document.getElementById('refPass').value = ''; // Ensure Empty
+            openPortalWindow('refereeModal', true);
         }
 
         function verifyRefereeLogin() {
             const name = document.getElementById('refName').value.trim();
             const pass = document.getElementById('refPass').value.trim();
-            const resBox = document.getElementById('refResultBox');
-            const supportBtn = document.getElementById('refSupportAction');
-
-            resBox.style.display = 'block';
-            resBox.className = 'ref-msg'; 
-
-            if(name === 'Swastik Halder' && pass === 'Assra@123') {
-                resBox.innerHTML = '<span class="material-icons-round" style="vertical-align:middle; font-size: 20px;">verified_user</span> Identity Verified...<br>Secure Database Loading...';
-                resBox.classList.add('msg-success');
-                supportBtn.style.display = 'none';
-                
-                setTimeout(() => {
-                    resBox.innerHTML = '<strong>বর্তমানে তথ্য পাওয়া যাচ্ছে না।</strong><br>কমিটির বর্তমান সিদ্ধান্ত অনুযায়ী এই তথ্য সাধারণের জন্য প্রকাশ করা হয়নি।';
-                    resBox.className = 'ref-msg msg-warning';
-                    supportBtn.style.display = 'block';
-                }, 2000);
-
-            } else if(name !== 'Swastik Halder' && pass !== 'Assra@123') {
-                resBox.innerHTML = '🚫 <strong>Access Denied</strong><br>অননুমোদিত প্রবেশের চেষ্টা শনাক্ত হয়েছে।';
-                resBox.classList.add('msg-error');
-                supportBtn.style.display = 'block';
-            } else if(name !== 'Swastik Halder') {
-                resBox.innerHTML = '⚠️ <strong>Unauthorized Member</strong><br>এই সদস্যের নাম অনুমোদিত সদস্য তালিকায় পাওয়া যায়নি।';
-                resBox.classList.add('msg-error');
-                supportBtn.style.display = 'block';
-            } else if(pass !== 'Assra@123') {
-                resBox.innerHTML = '⚠️ <strong>Authentication Failed</strong><br>প্রদত্ত নিরাপত্তা পাসওয়ার্ড সঠিক নয়।';
-                resBox.classList.add('msg-error');
-                supportBtn.style.display = 'block';
-            }
+            
+            // Temporary Logic: Any click on verify will show the new database message
+            triggerSmartLoader('Verifying Official Credentials...', null, 'security', 'var(--c-purple)');
+            
+            setTimeout(() => {
+                document.getElementById('refInputsArea').style.display = 'none';
+                document.getElementById('refRestrictedState').style.display = 'block';
+            }, 1200);
         }
 
+        function closeRefereeModal() { openPortalWindow('refereeModal', false); }
+
+        // ☁️ Notice Board Core API Stream
         const noticeList = document.getElementById('notice-list');
         fetch("https://script.google.com/macros/s/AKfycbzhG400jaJkrrfRcObaLD0qYjCIQEfuEOa362OD9GGldOhF5ts9cF0c4txvgV2XcFDXtA/exec")  
         .then(res => res.json())
@@ -660,15 +703,29 @@
             feed.forEach((notice, tracker) => {  
                 if(tracker < 2) {
                     let textParser = notice.Title || notice.title || notice.notice_title || "বিজ্ঞপ্তি প্রকাশিত হয়েছে";
-                    structure += `<a href="details.html?id=${tracker}" class="btn-action bg-purple"><span class="material-icons-round">arrow_right</span> ${textParser}</a>`;  
+                    structure += `<a href="javascript:void(0)" onclick="triggerSmartLoader('Loading Latest Notice...', 'details.html?id=${tracker}', 'campaign', 'var(--c-purple)')" class="btn-action bg-purple"><span class="material-icons-round notranslate" translate="no" aria-hidden="true">arrow_right</span> ${textParser}</a>`;  
                 }
             });  
-            noticeList.innerHTML = structure || "<p style='text-align:center;color:var(--text-muted);font-weight:600;'>কোনো সক্রিয় নোটিশ নেই।</p>";  
+            noticeList.innerHTML = structure || "<p style='text-align:center;color:var(--text-muted);'>কোনো সক্রিয় নোটিশ নেই।</p>";  
+            noticeList.removeAttribute('aria-busy'); 
         })
         .catch(() => {
-            noticeList.innerHTML = `<div style="background: #fee2e2; border: 1px solid #fecaca; padding: 15px; border-radius: 12px; text-align: center; color: #991b1b; font-weight: 600;">⚠️ ক্লাউড সার্ভার রেসপন্স করছে না।</div>`;
+            noticeList.innerHTML = `<div style="background: rgba(244, 63, 94, 0.1); border: 1px solid rgba(244, 63, 94, 0.3); padding: 15px; border-radius: 12px; text-align: center; color: #f43f5e; font-weight: 600;">⚠️ ক্লাউড সার্ভার রেসপন্স করছে না। নোটিশ বোর্ড পরে চেক করুন।</div>`;
+            noticeList.removeAttribute('aria-busy');
         });
+
+        // External form loaders preserved mapped to smart loader
+        function openFormLoader(endpoint) { triggerSmartLoader('Loading Membership Portal...', endpoint, 'assignment', 'var(--c-blue)'); }
+        function openPdfLoader(endpoint) { triggerSmartLoader('Opening Official IFAB Documents...', endpoint, 'description', 'var(--c-emerald)'); }
     </script>
 
+    <!-- GTranslate Global Deployment -->
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "bn", "languages": ["bn", "en", "hi"],
+            "wrapper_selector": ".gtranslate_wrapper", "flag_style": "3d", "alt_flags": {"en": "usa"}
+        }
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
 </body>  
 </html>
